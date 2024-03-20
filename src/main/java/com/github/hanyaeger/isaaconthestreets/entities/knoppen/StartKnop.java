@@ -17,9 +17,9 @@ public class StartKnop extends TextEntity implements MouseButtonPressedListener,
     private final IsaacOnTheStreets isaacOnTheStreets;
 
     public StartKnop(Coordinate2D initialLocation, IsaacOnTheStreets isaacOnTheStreets) {
-        super(initialLocation, "Play game");
+        super(initialLocation, "Start spel");
         this.isaacOnTheStreets = isaacOnTheStreets;
-        setFill(Color.PURPLE);
+        setFill(Color.WHITE);
         setFont(Font.font("Roboto", FontWeight.BOLD, 30));
     }
 
@@ -30,13 +30,13 @@ public class StartKnop extends TextEntity implements MouseButtonPressedListener,
 
     @Override
     public void onMouseEntered() {
-        setFill(Color.LIGHTYELLOW);
+        setFill(Color.BLACK);
         setCursor(Cursor.HAND);
     }
 
     @Override
     public void onMouseExited() {
-        setFill(Color.ORANGE);
+        setFill(Color.WHITE);
         setCursor(Cursor.DEFAULT);
 
 

@@ -18,6 +18,7 @@ public class Startscherm extends StaticScene {
     }
     @Override
     public void setupScene() {
+        setBackgroundAudio("audio/startscherm_isaacOnTheStreets.mp3");
         setBackgroundImage("backgrounds/startscherm_isaacOnTheStreets.jpeg");
     }
 
@@ -28,8 +29,8 @@ public class Startscherm extends StaticScene {
                 "Isaac on the streets"
         );
         isaacOnTheStreetsTitleText.setAnchorPoint(AnchorPoint.TOP_CENTER);
-        isaacOnTheStreetsTitleText.setFont(Font.font("Roboto", FontWeight.SEMI_BOLD, 80));
-        isaacOnTheStreetsTitleText.setStrokeWidth(1);
+        isaacOnTheStreetsTitleText.setFont(Font.font("Roboto", FontWeight.BOLD, 80));
+        isaacOnTheStreetsTitleText.setStrokeWidth(3);
         isaacOnTheStreetsTitleText.setStrokeColor(Color.BLACK);
         isaacOnTheStreetsTitleText.setFill(Color.WHITE);
         addEntity(isaacOnTheStreetsTitleText);
