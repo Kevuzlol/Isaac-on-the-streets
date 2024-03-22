@@ -5,6 +5,9 @@ import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.impl.TextEntity;
 import com.github.hanyaeger.api.scenes.StaticScene;
 import com.github.hanyaeger.isaaconthestreets.IsaacOnTheStreets;
+import com.github.hanyaeger.isaaconthestreets.entities.knoppen.Level1Knop;
+import com.github.hanyaeger.isaaconthestreets.entities.knoppen.Level2Knop;
+import com.github.hanyaeger.isaaconthestreets.entities.knoppen.Level3Knop;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -15,6 +18,7 @@ public class KiesLevelscherm extends StaticScene {
     public KiesLevelscherm(IsaacOnTheStreets isaacOnTheStreets) {
         this.isaacOnTheStreets = isaacOnTheStreets;
     }
+
     @Override
     public void setupScene() {
         setBackgroundImage("backgrounds/startscherm_isaacOnTheStreets.jpeg");
@@ -32,6 +36,20 @@ public class KiesLevelscherm extends StaticScene {
         isaacOnTheStreetsTitleText.setStrokeColor(Color.BLACK);
         isaacOnTheStreetsTitleText.setFill(Color.WHITE);
         addEntity(isaacOnTheStreetsTitleText);
+
+//level1 knop
+        Level1Knop Level1Knop = new Level1Knop(new Coordinate2D(getWidth() / 2, getHeight() / 3), isaacOnTheStreets);
+        Level1Knop.setAnchorPoint(AnchorPoint.TOP_CENTER);
+        addEntity(Level1Knop);
+
+        Level2Knop Level2Knop = new Level2Knop(new Coordinate2D(getWidth() / 2, getHeight() / 3 + 100), isaacOnTheStreets);
+        Level2Knop.setAnchorPoint(AnchorPoint.TOP_CENTER);
+        addEntity(Level2Knop);
+
+        Level3Knop Level3Knop = new Level3Knop(new Coordinate2D(getWidth() / 2, getHeight() / 3 + 200), isaacOnTheStreets);
+        Level3Knop.setAnchorPoint(AnchorPoint.TOP_CENTER);
+        addEntity(Level3Knop);
+
 
 
     }
