@@ -11,7 +11,8 @@ public class Endscherm extends DynamicScene {
     }
     @Override
     public void setupScene() {
-
+        setBackgroundAudio("");
+        setBackgroundImage("");
     }
 
     @Override

@@ -11,7 +11,8 @@ public class Scorescherm extends StaticScene {
     }
     @Override
     public void setupScene() {
-
+        setBackgroundAudio("");
+        setBackgroundImage("");
     }
 
     @Override
