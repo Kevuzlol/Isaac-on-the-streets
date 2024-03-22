@@ -14,7 +14,7 @@ import javafx.scene.text.FontWeight;
 
 public class Knop extends TextEntity implements MouseButtonPressedListener, MouseEnterListener, MouseExitListener {
 
-    protected final IsaacOnTheStreets isaacOnTheStreets;
+    public final IsaacOnTheStreets isaacOnTheStreets;
 
     public Knop(Coordinate2D initialLocation, String text, IsaacOnTheStreets isaacOnTheStreets) {
         super(initialLocation, text);
