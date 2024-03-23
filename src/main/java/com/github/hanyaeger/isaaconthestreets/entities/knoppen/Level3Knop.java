@@ -14,7 +14,9 @@ public class Level3Knop extends Knop{
     public void onMouseButtonPressed(final MouseButton button, final Coordinate2D coordinate2D) {
         isaacOnTheStreets.setActiveScene(6);
         //level3
-        //  isaacOnTheStreets.setActiveScene(3); om eindscherm te testen
+        //  isaacOnTheStreets.setActiveScene(3); //om eindscherm te testen
+         // isaacOnTheStreets.setActiveScene(2); //om scoreScherm te testen
+
     }
 
 }
