@@ -12,4 +12,6 @@ module isaacOnTheStreets {
     exports com.github.hanyaeger.isaaconthestreets.entities.knoppen;
     exports com.github.hanyaeger.isaaconthestreets.entities.mappen;
     exports com.github.hanyaeger.isaaconthestreets.entities.mappen.obstakels;
+    exports com.github.hanyaeger.isaaconthestreets.entities.powerups;
+
 }
