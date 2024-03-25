@@ -37,7 +37,7 @@ public class KiesLevelscherm extends StaticScene {
         isaacOnTheStreetsTitleText.setFill(Color.WHITE);
         addEntity(isaacOnTheStreetsTitleText);
 
-//level1 knop
+//level knoppen
         Level1Knop Level1Knop = new Level1Knop(new Coordinate2D(getWidth() / 2, getHeight() / 3), isaacOnTheStreets);
         Level1Knop.setAnchorPoint(AnchorPoint.TOP_CENTER);
         addEntity(Level1Knop);

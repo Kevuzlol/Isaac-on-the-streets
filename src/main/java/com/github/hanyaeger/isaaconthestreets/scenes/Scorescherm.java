@@ -20,14 +20,14 @@ public class Scorescherm extends StaticScene {
     @Override
     public void setupScene() {
         // setBackgroundAudio("");
-        // setBackgroundImage("");
-        setBackgroundColor(Color.BLUE);
+         setBackgroundImage("backgrounds/scorebord_isaacOnTheStreets.jpeg");
+
     }
 
     @Override
     public void setupEntities() {
         var isaacOnTheStreetsTitleText = new TextEntity(
-                new Coordinate2D(getWidth() / 2, getHeight() * 0.1),
+                new Coordinate2D(getWidth() / 2, getHeight() * 0.05),
                 "Scorescherm"
         );
         isaacOnTheStreetsTitleText.setAnchorPoint(AnchorPoint.TOP_CENTER);
@@ -37,7 +37,7 @@ public class Scorescherm extends StaticScene {
         isaacOnTheStreetsTitleText.setFill(Color.WHITE);
         addEntity(isaacOnTheStreetsTitleText);
 
-        PlayAgainKnop PlayAgainKnop = new PlayAgainKnop(new Coordinate2D(getWidth() / 2, getHeight() / 3 + 100), isaacOnTheStreets);
+        PlayAgainKnop PlayAgainKnop = new PlayAgainKnop(new Coordinate2D(getWidth() / 2, getHeight() / 3 + 180), isaacOnTheStreets);
         PlayAgainKnop.setAnchorPoint(AnchorPoint.TOP_CENTER);
         addEntity(PlayAgainKnop);
     }
