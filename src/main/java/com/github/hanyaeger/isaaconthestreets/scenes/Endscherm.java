@@ -38,7 +38,7 @@ public class Endscherm extends DynamicScene {
         isaacOnTheStreetsTitleText.setFill(Color.WHITE);
         addEntity(isaacOnTheStreetsTitleText);
 
-        PlayAgainKnop PlayAgainKnop = new PlayAgainKnop(new Coordinate2D(getWidth() / 2, getHeight() / 3 + 150), isaacOnTheStreets);
+        PlayAgainKnop PlayAgainKnop = new PlayAgainKnop(new Coordinate2D(getWidth() / 2, getHeight() / 3 + 450), isaacOnTheStreets);
         PlayAgainKnop.setAnchorPoint(AnchorPoint.TOP_CENTER);
         addEntity(PlayAgainKnop);
     }

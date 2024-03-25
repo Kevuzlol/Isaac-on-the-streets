@@ -20,7 +20,7 @@ public class Scorescherm extends StaticScene {
     @Override
     public void setupScene() {
         // setBackgroundAudio("");
-         setBackgroundImage("backgrounds/scorebord_isaacOnTheStreets.jpeg");
+         setBackgroundImage("backgrounds/scoreBord_isaacOnTheStreets.jpg");
 
     }
 
@@ -37,7 +37,7 @@ public class Scorescherm extends StaticScene {
         isaacOnTheStreetsTitleText.setFill(Color.WHITE);
         addEntity(isaacOnTheStreetsTitleText);
 
-        PlayAgainKnop PlayAgainKnop = new PlayAgainKnop(new Coordinate2D(getWidth() / 2, getHeight() / 3 + 180), isaacOnTheStreets);
+        PlayAgainKnop PlayAgainKnop = new PlayAgainKnop(new Coordinate2D(getWidth() / 2, getHeight() / 3 + 500), isaacOnTheStreets);
         PlayAgainKnop.setAnchorPoint(AnchorPoint.TOP_CENTER);
         addEntity(PlayAgainKnop);
     }
