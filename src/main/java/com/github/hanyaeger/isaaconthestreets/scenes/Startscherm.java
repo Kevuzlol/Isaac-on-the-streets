@@ -18,7 +18,8 @@ public class Startscherm extends StaticScene {
     }
     @Override
     public void setupScene() {
-      ///  setBackgroundAudio("audio/startscherm_isaacOnTheStreets.mp3");
+
+        setBackgroundAudio("audio/startscherm_isaacOnTheStreets.mp3");
         setBackgroundImage("backgrounds/startscherm_isaacOnTheStreets.jpeg");
     }
 
