@@ -5,6 +5,7 @@ import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.entities.Collided;
 import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.impl.SpriteEntity;
+import com.github.hanyaeger.isaaconthestreets.entities.Isaac;
 
 import java.util.List;
 
@@ -16,7 +17,7 @@ public class PowerUp extends SpriteEntity implements Collided, Collider {
     @Override
     public void onCollision(List<Collider> collidingObject) {
         for (Collider collider : collidingObject){
-            if (false){
+            if (collider instanceof Isaac){
                 remove();
             }
         }
