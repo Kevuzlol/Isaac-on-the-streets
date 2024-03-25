@@ -21,8 +21,8 @@ public class Endscherm extends DynamicScene {
     @Override
     public void setupScene() {
         //setBackgroundAudio("");
-       // setBackgroundImage("");
-        setBackgroundColor(Color.BLUE); // testing
+        setBackgroundImage("backgrounds/endScreen_isaacOnTheStreets.jpeg");
+        //setBackgroundColor(Color.BLUE); // testing
     }
 
     @Override
@@ -38,7 +38,7 @@ public class Endscherm extends DynamicScene {
         isaacOnTheStreetsTitleText.setFill(Color.WHITE);
         addEntity(isaacOnTheStreetsTitleText);
 
-        PlayAgainKnop PlayAgainKnop = new PlayAgainKnop(new Coordinate2D(getWidth() / 2, getHeight() / 3 + 100), isaacOnTheStreets);
+        PlayAgainKnop PlayAgainKnop = new PlayAgainKnop(new Coordinate2D(getWidth() / 2, getHeight() / 3 + 450), isaacOnTheStreets);
         PlayAgainKnop.setAnchorPoint(AnchorPoint.TOP_CENTER);
         addEntity(PlayAgainKnop);
     }

@@ -7,7 +7,7 @@ import javafx.scene.input.MouseButton;
 public class PlayAgainKnop extends Knop{
 
     public PlayAgainKnop(Coordinate2D initialLocation, IsaacOnTheStreets isaacOnTheStreets){
-        super(initialLocation, "Level 1", isaacOnTheStreets);
+        super(initialLocation, "play again", isaacOnTheStreets);
     }
     @Override
     public void onMouseButtonPressed(final MouseButton button, final Coordinate2D coordinate2D) {
