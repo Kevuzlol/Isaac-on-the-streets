@@ -12,7 +12,7 @@ public class IsaacOnTheStreets extends YaegerGame {
     @Override
     public void setupGame() {
         setGameTitle("Isaac on the streets");
-        setSize(new Size(800, 600));
+        setSize(new Size(1024, 1024));
     }
 
 
