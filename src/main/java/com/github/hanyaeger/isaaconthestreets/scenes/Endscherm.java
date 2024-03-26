@@ -2,12 +2,14 @@ package com.github.hanyaeger.isaaconthestreets.scenes;
 
 import com.github.hanyaeger.api.AnchorPoint;
 import com.github.hanyaeger.api.Coordinate2D;
+import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.entities.impl.TextEntity;
 import com.github.hanyaeger.api.scenes.DynamicScene;
 import com.github.hanyaeger.isaaconthestreets.IsaacOnTheStreets;
 import com.github.hanyaeger.isaaconthestreets.entities.knoppen.Level2Knop;
 import com.github.hanyaeger.isaaconthestreets.entities.knoppen.PlayAgainKnop;
 import com.github.hanyaeger.isaaconthestreets.entities.knoppen.StartKnop;
+import com.github.hanyaeger.isaaconthestreets.entities.vijand.Ratten;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -41,5 +43,8 @@ public class Endscherm extends DynamicScene {
         PlayAgainKnop PlayAgainKnop = new PlayAgainKnop(new Coordinate2D(getWidth() / 2, getHeight() / 3 + 450), isaacOnTheStreets);
         PlayAgainKnop.setAnchorPoint(AnchorPoint.TOP_CENTER);
         addEntity(PlayAgainKnop);
+
+
+
     }
 }
