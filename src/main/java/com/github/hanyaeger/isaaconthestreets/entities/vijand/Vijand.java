@@ -23,35 +23,38 @@ public abstract class Vijand extends DynamicSpriteEntity implements Collider, Co
         // setmotion voor speed en beweging
     }
 
-    // inplaats van methode doe damage gelijk in de oncollision
+    // inplaats van methode doedamage gelijk in de oncollision
     @Override
     public void onCollision(List<Collider> list) {
         for (Collider collider : list) {
             if (collider instanceof Isaac) {
                 System.out.println("collision test!");
                 //health - damage;
+//            } else if( collider instanceof steen){
+//                System.out.println("collision test!");
+//                //health - damage
             }
         }
     }
 
     @Override
     public void notifyBoundaryTouching(SceneBorder sceneBorder) {
-        // If the entity touches the left border, change direction to right
-        if (sceneBorder.equals(SceneBorder.LEFT)) {
-            setMotion(getSnelheid(), Direction.RIGHT);
-        }
-        // If the entity touches the right border, change direction to left
-        else if (sceneBorder.equals(SceneBorder.RIGHT)) {
-            setMotion(getSnelheid(), Direction.LEFT);
-        }
-        // If the entity touches the top or bottom border, reverse its vertical motion
-        else if (sceneBorder.equals(SceneBorder.TOP) ) {
-            setMotion(getSnelheid(), Direction.DOWN);
-        }
-        else if (sceneBorder.equals(SceneBorder.BOTTOM) ) {
-            setMotion(getSnelheid(), Direction.UP);
-        }
-
+//        // If the entity touches the left border, change direction to right
+//        if (sceneBorder.equals(SceneBorder.LEFT)) {
+//            setMotion(getSnelheid(), Direction.RIGHT);
+//        }
+//        // If the entity touches the right border, change direction to left
+//        else if (sceneBorder.equals(SceneBorder.RIGHT)) {
+//            setMotion(getSnelheid(), Direction.LEFT);
+//        }
+//        // If the entity touches the top or bottom border, reverse its vertical motion
+//        else if (sceneBorder.equals(SceneBorder.TOP) ) {
+//            setMotion(getSnelheid(), Direction.DOWN);
+//        }
+//        else if (sceneBorder.equals(SceneBorder.BOTTOM) ) {
+//            setMotion(getSnelheid(), Direction.UP);
+//        }
+        changeDirection(180D);
     }
 
     public void setDamage(int damage) {
