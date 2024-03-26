@@ -19,7 +19,7 @@ public abstract class Vijand extends DynamicSpriteEntity implements Collider, Co
     private double snelheid = 3;
 
     protected Vijand(String resource, Coordinate2D initialLocation) {
-        super(resource, initialLocation);
+        super(resource, initialLocation,new Size(150,150),1,19);
         // setmotion voor speed en beweging
     }
 
@@ -54,7 +54,7 @@ public abstract class Vijand extends DynamicSpriteEntity implements Collider, Co
 //        else if (sceneBorder.equals(SceneBorder.BOTTOM) ) {
 //            setMotion(getSnelheid(), Direction.UP);
 //        }
-        changeDirection(180D);
+        changeDirection(120D);
     }
 
     public void setDamage(int damage) {

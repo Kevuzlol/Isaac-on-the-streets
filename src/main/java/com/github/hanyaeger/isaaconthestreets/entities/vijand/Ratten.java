@@ -11,5 +11,5 @@ public class Ratten extends Vijand{
         setDamage(1);
         setMotion(getSnelheid(),Direction.LEFT);
     }
-    // wnr je een nieuwe aanmaakt  Ratten ratten = new Ratten("path/to/ratten.png", initialLocation);
+
 }

@@ -20,16 +20,17 @@ public class Level1scherm extends DynamicScene implements TileMapContainer {
     }
     @Override
     public void setupScene() {
-        setBackgroundAudio("audio/young-wild-free.mp3");
+        //
+        // setBackgroundAudio("audio/young-wild-free.mp3");
         setBackgroundImage("backgrounds/boss_level.jpeg");
     }
 
     @Override
     public void setupEntities() {
-        Ratten ratten = new Ratten("sprites/swordfish.png", new Coordinate2D(100,100));
+        Ratten ratten = new Ratten("sprites/sharky.png", new Coordinate2D(100,100));
         addEntity(ratten);
 
-        var healthText = new HealthText(new Coordinate2D(0, 0));
+        var healthText = new HealthText(new Coordinate2D(100, 0));
         addEntity(healthText);
 
         addEntity(new Isaac(new Coordinate2D(1, 1), healthText, isaacOnTheStreets));
