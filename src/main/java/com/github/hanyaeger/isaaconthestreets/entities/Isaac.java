@@ -7,11 +7,15 @@ import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.Direction;
 import com.github.hanyaeger.api.entities.SceneBorderTouchingWatcher;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
+import com.github.hanyaeger.api.scenes.DynamicScene;
 import com.github.hanyaeger.api.scenes.SceneBorder;
 import com.github.hanyaeger.api.userinput.KeyListener;
 import com.github.hanyaeger.isaaconthestreets.IsaacOnTheStreets;
 import com.github.hanyaeger.isaaconthestreets.entities.mappen.obstakels.Obstakels;
+import com.github.hanyaeger.isaaconthestreets.entities.powerups.Speed;
 import com.github.hanyaeger.isaaconthestreets.entities.text.HealthText;
+
+import com.github.hanyaeger.isaaconthestreets.scenes.Level1scherm;
 import javafx.scene.input.KeyCode;
 
 import java.util.List;
@@ -20,40 +24,63 @@ import java.util.Set;
 public class Isaac extends DynamicSpriteEntity implements SceneBorderTouchingWatcher, Collider, Collided, KeyListener {
     private final HealthText healthText;
 
+    private int snelheidVermeenigvuldiger = 1;
+
     private final IsaacOnTheStreets isaacOnTheStreets;
 
-    public Isaac(Coordinate2D initialLocation, final HealthText healthText, IsaacOnTheStreets isaacOnTheStreets) {
-        super("sprites/hanny.png", initialLocation, new Size(20, 40), 1, 2);
+    private final Level1scherm level;
+
+    public Isaac(Coordinate2D initialLocation, final HealthText healthText, IsaacOnTheStreets isaacOnTheStreets, Level1scherm level) {
+        super("sprites/isaac.png", initialLocation, new Size(40, 40), 12, 16);
 
         this.healthText = healthText;
 
         this.isaacOnTheStreets = isaacOnTheStreets;
+
+        this.level = level;
     }
 
     @Override
     public void onPressedKeysChange(Set<KeyCode> pressedKeys) {
         if (pressedKeys.contains(KeyCode.LEFT)) {
             setCurrentFrameIndex(0);
-            setMotion(3, Direction.LEFT);
+            setMotion(3 * snelheidVermeenigvuldiger, Direction.LEFT);
         } else if (pressedKeys.contains(KeyCode.RIGHT)) {
             setCurrentFrameIndex(1);
-            setMotion(3, Direction.RIGHT);
+            setMotion(3 * snelheidVermeenigvuldiger, Direction.RIGHT);
         } else if (pressedKeys.contains(KeyCode.UP)) {
-            setMotion(3, Direction.UP);
+            setMotion(3 * snelheidVermeenigvuldiger, Direction.UP);
         } else if (pressedKeys.contains(KeyCode.DOWN)) {
-            setMotion(3, Direction.DOWN);
+            setMotion(3 * snelheidVermeenigvuldiger, Direction.DOWN);
         }
         else{
             setSpeed(0);
         }
+        if(pressedKeys.contains(KeyCode.SPACE)) {
+            //gooi steen
+
+            Coordinate2D location;
+
+            if (Direction.RIGHT.equals(Direction.valueOf(this.getDirection()))) {
+                location = new Coordinate2D(this.getBoundingBox().getMaxX() - 20, this.getBoundingBox().getCenterY() - 10);
+            } else {
+                location = new Coordinate2D(this.getBoundingBox().getMinX() + 10 , this.getBoundingBox().getCenterY() - 10);
+            }
+            level.createSteen(location, Direction.valueOf(this.getDirection()));
+
+        }
     }
 
+
     @Override
-    public void onCollision(List<Collider> collidingObject) {
+    public void onCollision(List<Collider> collidingObjects) {
         var obstakelCollision = false;
-        for (Collider collider : collidingObject) {
+        for (Collider collider : collidingObjects) {
             if (collider instanceof Obstakels) {
                 obstakelCollision = true;
+            }
+            if (collider instanceof Speed) {
+                snelheidVermeenigvuldiger = 2;
             }
         }
 
@@ -93,4 +120,6 @@ public class Isaac extends DynamicSpriteEntity implements SceneBorderTouchingWat
                 break;
         }
     }
+
+
 }
