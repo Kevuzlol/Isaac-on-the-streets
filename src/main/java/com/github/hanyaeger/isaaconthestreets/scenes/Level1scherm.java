@@ -31,7 +31,7 @@ public class Level1scherm extends DynamicScene implements TileMapContainer {
 
     @Override
     public void setupEntities() {
-        Ratten ratten = new Ratten("sprites/rat_1.png", new Coordinate2D(100,100));
+        Ratten ratten = new Ratten("sprites/rat_1.png", new Coordinate2D(100,100),IsaacOnTheStreets);
         addEntity(ratten);
 
         Vlieg vlieg = new Vlieg("sprites/vlieg.png",new Coordinate2D(200,100));

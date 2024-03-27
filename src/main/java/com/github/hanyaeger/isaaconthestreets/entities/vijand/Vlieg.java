@@ -41,8 +41,6 @@ public class Vlieg extends Vijand{
         changeDirection(120D);
 //        changeDirection(getDirection());
         double direction = getDirection() % 360;
-        System.out.println("vlieg direction");
-        System.out.println(direction);
         if (direction >= 0 && direction < 90) {
             setAutoCycleRow(2);
             System.out.println(getAutoCycleRow());

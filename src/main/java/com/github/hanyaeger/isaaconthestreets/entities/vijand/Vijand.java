@@ -8,7 +8,9 @@ import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.SceneBorderTouchingWatcher;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 import com.github.hanyaeger.api.scenes.SceneBorder;
+import com.github.hanyaeger.isaaconthestreets.IsaacOnTheStreets;
 import com.github.hanyaeger.isaaconthestreets.entities.Isaac;
+import com.github.hanyaeger.isaaconthestreets.entities.Steen;
 import com.github.hanyaeger.isaaconthestreets.entities.mappen.obstakels.Obstakels;
 import com.github.hanyaeger.api.entities.Direction;
 
@@ -16,10 +18,13 @@ import java.util.List;
 
 public abstract class Vijand extends DynamicSpriteEntity implements Collider, Collided, SceneBorderTouchingWatcher {
 
+
+    private IsaacOnTheStreets isaacOnTheStreets;
+    protected int health = 5;
     private int damage = 1;
     private double snelheid = 3;
 
-    protected Vijand(String resource, Coordinate2D initialLocation, Size size, int row, int column) {
+    protected Vijand(String resource, Coordinate2D initialLocation, Size size, int row, int column, final IsaacOnTheStreets isaacOnTheStreets) {
         super(resource, initialLocation, size, row, column);
         // setmotion voor speed en beweging
 
@@ -28,21 +33,21 @@ public abstract class Vijand extends DynamicSpriteEntity implements Collider, Co
 
     // inplaats van methode doedamage gelijk in de oncollision
     @Override
-    public  void onCollision(List<Collider> list) {
+    public void onCollision(List<Collider> list) {
         double direction = getDirection() % 360;
         var isaacCollision = false;
         var obstakelCollision = false;
         for (Collider collider : list) {
             if (collider instanceof Isaac) {
                 isaacCollision = true;
-               // System.out.println("collision test!");
-                //health - damage; // damage dan wel van isaac
-//            } else if( collider instanceof steen){
-//                System.out.println("collision test!");
-//                //health - damage // damage dan wel van steen
+                // System.out.println("collision test!");
+                health -= 1; // damage dan wel van isaac
+            } else if (collider instanceof Steen) {
+                System.out.println("collision test steen!");
+                health -= 1;  // damage dan wel van steen
             }
             if (collider instanceof Obstakels) {
-              //  System.out.println("TEST obstakel colliosn");
+                //  System.out.println("TEST obstakel colliosn");
                 obstakelCollision = true;
             }
         }
@@ -50,7 +55,7 @@ public abstract class Vijand extends DynamicSpriteEntity implements Collider, Co
 
         if (obstakelCollision) {
             if (direction >= 0 && direction < 90) {
-                changeDirection(80D) ;
+                changeDirection(80D);
             }
             if (direction >= 90 && direction < 180) {
                 changeDirection(80D);
@@ -63,12 +68,15 @@ public abstract class Vijand extends DynamicSpriteEntity implements Collider, Co
 
             }
         }
+        // stati variable aanmaken die bijhoud hoeveel enemys er zijn
+        if (health == 0) {
+            this.isaacOnTheStreets.setActiveScene(2);
+        }
     }
 
     @Override
     public void notifyBoundaryTouching(SceneBorder sceneBorder) {
 //
-
     }
 
     public void setDamage(int damage) {
@@ -83,3 +91,4 @@ public abstract class Vijand extends DynamicSpriteEntity implements Collider, Co
         return snelheid;
     }
 }
+
