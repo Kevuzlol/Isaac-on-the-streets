@@ -2,7 +2,11 @@ package com.github.hanyaeger.isaaconthestreets;
 
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.YaegerGame;
+import com.github.hanyaeger.api.userinput.KeyListener;
 import com.github.hanyaeger.isaaconthestreets.scenes.*;
+import javafx.scene.input.KeyCode;
+
+import java.util.Set;
 
 public class IsaacOnTheStreets extends YaegerGame {
     public static void main(String[] args) {
@@ -26,4 +30,5 @@ public class IsaacOnTheStreets extends YaegerGame {
         addScene(5, new Level2scherm(this));
         addScene(6, new Level3scherm(this));
     }
+
 }
