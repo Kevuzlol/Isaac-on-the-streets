@@ -19,7 +19,7 @@ public abstract class Vijand extends DynamicSpriteEntity implements Collider, Co
     private double snelheid = 3;
 
     protected Vijand(String resource, Coordinate2D initialLocation) {
-        super(resource, initialLocation,new Size(50,50),1,19);
+        super(resource, initialLocation,new Size(150,150),1,3);
         // setmotion voor speed en beweging
     }
 
