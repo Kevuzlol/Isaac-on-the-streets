@@ -7,7 +7,6 @@ import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.Direction;
 import com.github.hanyaeger.api.entities.SceneBorderTouchingWatcher;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
-import com.github.hanyaeger.api.scenes.DynamicScene;
 import com.github.hanyaeger.api.scenes.SceneBorder;
 import com.github.hanyaeger.api.userinput.KeyListener;
 import com.github.hanyaeger.isaaconthestreets.IsaacOnTheStreets;
@@ -16,6 +15,7 @@ import com.github.hanyaeger.isaaconthestreets.entities.powerups.Speed;
 import com.github.hanyaeger.isaaconthestreets.entities.text.HealthText;
 
 import com.github.hanyaeger.isaaconthestreets.scenes.Level1scherm;
+import com.github.hanyaeger.isaaconthestreets.scenes.Levelscherm;
 import javafx.scene.input.KeyCode;
 
 import java.util.List;
@@ -28,10 +28,9 @@ public class Isaac extends DynamicSpriteEntity implements SceneBorderTouchingWat
 
     private final IsaacOnTheStreets isaacOnTheStreets;
 
+    private final Levelscherm level;
 
-    private final Level1scherm level;
-
-    public Isaac(Coordinate2D initialLocation, final HealthText healthText, IsaacOnTheStreets isaacOnTheStreets, Level1scherm level) {
+    public Isaac(Coordinate2D initialLocation, final HealthText healthText, IsaacOnTheStreets isaacOnTheStreets, Levelscherm level) {
         super("sprites/isaac.png", initialLocation, new Size(40, 40), 12, 16);
 
 
