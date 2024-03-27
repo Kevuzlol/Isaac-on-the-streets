@@ -10,6 +10,7 @@ import com.github.hanyaeger.isaaconthestreets.entities.mappen.Map;
 import com.github.hanyaeger.isaaconthestreets.entities.vijand.Ratten;
 
 import com.github.hanyaeger.isaaconthestreets.entities.text.HealthText;
+import com.github.hanyaeger.isaaconthestreets.entities.vijand.Vlieg;
 
 
 public class Level1scherm extends DynamicScene implements TileMapContainer {
@@ -29,6 +30,9 @@ public class Level1scherm extends DynamicScene implements TileMapContainer {
     public void setupEntities() {
         Ratten ratten = new Ratten("sprites/rat_1.png", new Coordinate2D(100,100));
         addEntity(ratten);
+
+        Vlieg vlieg = new Vlieg("sprites/vlieg.png",new Coordinate2D(200,100));
+        addEntity(vlieg);
 
         var healthText = new HealthText(new Coordinate2D(100, 0));
         addEntity(healthText);

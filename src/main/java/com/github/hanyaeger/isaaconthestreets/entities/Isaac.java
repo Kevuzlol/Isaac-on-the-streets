@@ -23,7 +23,7 @@ public class Isaac extends DynamicSpriteEntity implements SceneBorderTouchingWat
     private final IsaacOnTheStreets isaacOnTheStreets;
 
     public Isaac(Coordinate2D initialLocation, final HealthText healthText, IsaacOnTheStreets isaacOnTheStreets) {
-        super("sprites/hanny.png", initialLocation, new Size(20, 40), 1, 2);
+        super("sprites/Hanny.png", initialLocation, new Size(100, 100), 1, 2);
 
         this.healthText = healthText;
 

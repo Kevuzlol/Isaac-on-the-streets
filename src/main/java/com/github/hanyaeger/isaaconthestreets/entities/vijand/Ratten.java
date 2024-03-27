@@ -19,24 +19,11 @@ public class Ratten extends Vijand {
 
     @Override
     public void notifyBoundaryTouching(SceneBorder sceneBorder) {
-//        // If the entity touches the left border, change direction to right
-//        if (sceneBorder.equals(SceneBorder.LEFT)) {
-//            setMotion(getSnelheid(), Direction.RIGHT);
-//        }
-//        // If the entity touches the right border, change direction to left
-//        else if (sceneBorder.equals(SceneBorder.RIGHT)) {
-//            setMotion(getSnelheid(), Direction.LEFT);
-//        }
-//        // If the entity touches the top or bottom border, reverse its vertical motion
-//        else if (sceneBorder.equals(SceneBorder.TOP) ) {
-//            setMotion(getSnelheid(), Direction.DOWN);
-//        }
-//        else if (sceneBorder.equals(SceneBorder.BOTTOM) ) {
-//            setMotion(getSnelheid(), Direction.UP);
-//        }
-        changeDirection(120D);
+        changeDirection(80D);
 //        changeDirection(getDirection());
+//        System.out.println(getDirection());
         double direction = getDirection() % 360;
+        System.out.println("rat direction");
         System.out.println(direction);
         if (direction >= 0 && direction < 90) {
             setAutoCycleRow(2);
