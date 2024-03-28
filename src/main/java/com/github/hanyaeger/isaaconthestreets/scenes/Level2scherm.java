@@ -6,6 +6,7 @@ import com.github.hanyaeger.isaaconthestreets.IsaacOnTheStreets;
 import com.github.hanyaeger.isaaconthestreets.entities.Isaac;
 import com.github.hanyaeger.isaaconthestreets.entities.mappen.Level2Map;
 import com.github.hanyaeger.isaaconthestreets.entities.text.HealthText;
+import com.github.hanyaeger.isaaconthestreets.entities.vijand.Ratten;
 
 public class Level2scherm extends Levelscherm implements TileMapContainer {
 
@@ -23,7 +24,15 @@ public class Level2scherm extends Levelscherm implements TileMapContainer {
         var healthText = new HealthText(new Coordinate2D(50, 50));
         addEntity(new HealthText(new Coordinate2D(50, 50)));
 
-        addEntity(new Isaac(new Coordinate2D(700, 40), healthText, isaacOnTheStreets, this));
+        addEntity(new Isaac(new Coordinate2D(400, 40), healthText, isaacOnTheStreets, this));
+
+        Ratten rat1 = new Ratten("sprites/rat_1.png", new Coordinate2D(400,200));
+        Ratten rat2 = new Ratten("sprites/rat_1.png", new Coordinate2D(400,400));
+        Ratten rat3 = new Ratten("sprites/rat_1.png", new Coordinate2D(400,600));
+        addEntity(rat1);
+        addEntity(rat2);
+        addEntity(rat3);
+
 
     }
 
