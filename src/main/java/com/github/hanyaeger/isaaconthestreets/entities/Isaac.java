@@ -25,7 +25,7 @@ import java.util.Set;
 public class Isaac extends DynamicSpriteEntity implements SceneBorderTouchingWatcher, Collider, Collided, KeyListener {
     private final IsaacOnTheStreets isaacOnTheStreets;
     private final Levelscherm level;
-    private final HealthText healthText;
+    private HealthText healthText;
     private int health = 3;
     private int snelheidVermeenigvuldiger = 1;
     private long healthTijd;
@@ -33,7 +33,7 @@ public class Isaac extends DynamicSpriteEntity implements SceneBorderTouchingWat
     private long gooiSteenWachttijd = 500;
     private int onkwetsbaarTijd = 3000;
 
-    public Isaac(Coordinate2D initialLocation, final HealthText healthText, final IsaacOnTheStreets isaacOnTheStreets, Levelscherm level) {
+    public Isaac(Coordinate2D initialLocation, HealthText healthText, final IsaacOnTheStreets isaacOnTheStreets, Levelscherm level) {
         super("sprites/isaac.png", initialLocation, new Size(40, 40), 12, 16);
 
         this.isaacOnTheStreets = isaacOnTheStreets;

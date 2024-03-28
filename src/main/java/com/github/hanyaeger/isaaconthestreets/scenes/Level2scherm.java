@@ -1,11 +1,9 @@
 package com.github.hanyaeger.isaaconthestreets.scenes;
 
 import com.github.hanyaeger.api.Coordinate2D;
-import com.github.hanyaeger.api.entities.Direction;
 import com.github.hanyaeger.api.scenes.TileMapContainer;
 import com.github.hanyaeger.isaaconthestreets.IsaacOnTheStreets;
 import com.github.hanyaeger.isaaconthestreets.entities.Isaac;
-import com.github.hanyaeger.isaaconthestreets.entities.Steen;
 import com.github.hanyaeger.isaaconthestreets.entities.mappen.Level2Map;
 import com.github.hanyaeger.isaaconthestreets.entities.text.HealthText;
 
@@ -17,7 +15,7 @@ public class Level2scherm extends Levelscherm implements TileMapContainer {
 
     @Override
     public void setupScene() {
-        setBackgroundImage("backgrounds/boss_level.jpeg");
+        setBackgroundImage("backgrounds/level2background.jpeg");
     }
 
     @Override
