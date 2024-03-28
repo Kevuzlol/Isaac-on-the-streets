@@ -43,8 +43,9 @@ public class Level1scherm extends DynamicScene implements TileMapContainer {
 
         addEntity(new Isaac(new Coordinate2D(1, 1), healthText, isaacOnTheStreets, this));
 
-        System.out.println("antal health");
-        System.out.println(Vijand.getHealth());
+        System.out.println("ratten health " + ratten.getHealth());
+
+
     }
 
     @Override

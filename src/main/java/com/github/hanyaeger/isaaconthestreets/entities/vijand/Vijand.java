@@ -15,6 +15,7 @@ import com.github.hanyaeger.isaaconthestreets.entities.mappen.obstakels.Obstakel
 import com.github.hanyaeger.api.entities.Direction;
 
 import java.util.List;
+import java.util.Random;
 
 public abstract class Vijand extends DynamicSpriteEntity implements Collider, Collided, SceneBorderTouchingWatcher {
 
@@ -22,7 +23,7 @@ public abstract class Vijand extends DynamicSpriteEntity implements Collider, Co
 
     private static int aantalVijanden = 0;
     private IsaacOnTheStreets isaacOnTheStreets;
-    protected  static int health = 5;
+    private int health = 6;
     private int damage = 1;
     private double snelheid = 3;
 
@@ -57,26 +58,14 @@ public abstract class Vijand extends DynamicSpriteEntity implements Collider, Co
 
 
         if (obstakelCollision) {
-            if (direction >= 0 && direction < 90) {
-                changeDirection(80D);
-            }
-            if (direction >= 90 && direction < 180) {
-                changeDirection(80D);
-            }
-            if (direction >= 180 && direction < 270) {
-                changeDirection(80D);
-            }
-            if (direction >= 269 && direction < 360) {
-                changeDirection(80D);
+            // randomzied functie
+            Random rand = new Random();
+            int nextdgrs = 0;
+            nextdgrs = rand.nextInt((160 - 80) + 1) + 80;
+           // System.out.println(nextdgrs);
+            changeDirection(nextdgrs);
 
-            }
         }
-
-        if (steenCollision) {
-            //System.out.println("collision test steen!");
-            health -= 1;  // damage dan wel van steen
-        }
-
 
         if (aantalVijanden == 0) {
             this.isaacOnTheStreets.setActiveScene(3);
@@ -89,6 +78,8 @@ public abstract class Vijand extends DynamicSpriteEntity implements Collider, Co
 //
     }
 
+
+    // snelheid en damage
     public void setDamage(int damage) {
         this.damage = damage;
     }
@@ -102,6 +93,7 @@ public abstract class Vijand extends DynamicSpriteEntity implements Collider, Co
     }
 
 
+    // aantal vijanden
     public static int getAantalVijanden() {
         return aantalVijanden;
     }
@@ -111,11 +103,12 @@ public abstract class Vijand extends DynamicSpriteEntity implements Collider, Co
     }
 
 
-    public static int getHealth(){
+    // health
+    public int getHealth() {
         return health;
     }
 
-    public void setHealth(int health){
+    public void setHealth(int health) {
         this.health = health;
     }
 

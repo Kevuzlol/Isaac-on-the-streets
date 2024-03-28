@@ -12,6 +12,7 @@ import java.util.List;
 
 public class Vlieg extends Vijand {
 
+    private  int health = 5;
     private IsaacOnTheStreets isaacOnTheStreets;
 
     public Vlieg(String resource, Coordinate2D initialLocation) {
@@ -22,6 +23,7 @@ public class Vlieg extends Vijand {
         setDamage(1);
         setMotion(getSnelheid(), Direction.RIGHT);
         this.isaacOnTheStreets = isaacOnTheStreets;
+
     }
 
 
@@ -79,5 +81,11 @@ public class Vlieg extends Vijand {
 //                //health - damage // damage dan wel van steen
             }
         }
+    }
+
+@Override
+    public int getHealth() {
+
+        return health;
     }
 }

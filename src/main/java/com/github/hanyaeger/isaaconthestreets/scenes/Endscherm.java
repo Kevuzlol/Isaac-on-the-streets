@@ -44,7 +44,5 @@ public class Endscherm extends DynamicScene {
         PlayAgainKnop.setAnchorPoint(AnchorPoint.TOP_CENTER);
         addEntity(PlayAgainKnop);
 
-
-
     }
 }
