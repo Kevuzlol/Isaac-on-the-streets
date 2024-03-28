@@ -24,7 +24,7 @@ public class Level1scherm extends Levelscherm implements TileMapContainer {
     @Override
     public void setupEntities() {
         var healthText = new HealthText(new Coordinate2D(50, 50));
-        addEntity(new HealthText(new Coordinate2D(50, 50)));
+        addEntity(healthText);
 
         addEntity(new Isaac(new Coordinate2D(700, 40), healthText, isaacOnTheStreets, this));
 
