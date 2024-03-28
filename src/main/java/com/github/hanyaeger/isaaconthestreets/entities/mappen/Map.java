@@ -22,6 +22,7 @@ public abstract class Map extends TileMap {
         addEntity(12, CrystalMeth.class, "sprites/crystal_meth.png");
         addEntity(13, Heroine.class, "sprites/naald.jpeg");
 
+
         addEntity(99, OnzichtbareBarriere.class, "sprites/onzichtbareBarriere.png");
 //        addEntity(99, OnzichtbareBarriere.class, "sprites/hartje.png");
     }
