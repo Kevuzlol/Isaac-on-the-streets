@@ -31,7 +31,7 @@ public class Level1scherm extends Levelscherm implements TileMapContainer {
 
         addEntity(new Isaac(new Coordinate2D(700, 40), healthText, isaacOnTheStreets, this));
 
-        Ratten ratten = new Ratten("sprites/rat_1.png", new Coordinate2D(200,200));
+        Ratten ratten = new Ratten("sprites/rat_1.png", new Coordinate2D(200,200),isaacOnTheStreets);
         addEntity(ratten);
 
         Vlieg vlieg = new Vlieg("sprites/vlieg.png",new Coordinate2D(200,100));

@@ -7,12 +7,13 @@ import com.github.hanyaeger.api.entities.Direction;
 import com.github.hanyaeger.api.scenes.SceneBorder;
 import com.github.hanyaeger.isaaconthestreets.IsaacOnTheStreets;
 import com.github.hanyaeger.isaaconthestreets.entities.Isaac;
+import com.github.hanyaeger.isaaconthestreets.entities.Steen;
 
 import java.util.List;
 
 public class Vlieg extends Vijand {
 
-    private  int health = 5;
+    private int health = 5;
     private IsaacOnTheStreets isaacOnTheStreets;
 
     public Vlieg(String resource, Coordinate2D initialLocation) {
@@ -29,21 +30,7 @@ public class Vlieg extends Vijand {
 
     @Override
     public void notifyBoundaryTouching(SceneBorder sceneBorder) {
-//        // If the entity touches the left border, change direction to right
-//        if (sceneBorder.equals(SceneBorder.LEFT)) {
-//            setMotion(getSnelheid(), Direction.RIGHT);
-//        }
-//        // If the entity touches the right border, change direction to left
-//        else if (sceneBorder.equals(SceneBorder.RIGHT)) {
-//            setMotion(getSnelheid(), Direction.LEFT);
-//        }
-//        // If the entity touches the top or bottom border, reverse its vertical motion
-//        else if (sceneBorder.equals(SceneBorder.TOP) ) {
-//            setMotion(getSnelheid(), Direction.DOWN);
-//        }
-//        else if (sceneBorder.equals(SceneBorder.BOTTOM) ) {
-//            setMotion(getSnelheid(), Direction.UP);
-//        }
+
         changeDirection(120D);
 //        changeDirection(getDirection());
         double direction = getDirection() % 360;
@@ -68,24 +55,29 @@ public class Vlieg extends Vijand {
 
     @Override
     public void onCollision(List<Collider> list) {
-        double direction = getDirection() % 360;
-        var isaacCollision = false;
-        var obstakelCollision = false;
+        super.onCollision(list); // Call superclass implementation for common collision handling
+
         for (Collider collider : list) {
-            if (collider instanceof Isaac) {
-                isaacCollision = true;
-                // System.out.println("collision test!");
-                //health - damage; // damage dan wel van isaac
-//            } else if( collider instanceof steen){
-//                System.out.println("collision test!");
-//                //health - damage // damage dan wel van steen
+            if (collider instanceof Steen) {
+                // Decrease health when colliding with a steen
+                health--;
+                System.out.println("health vlieg" + getHealth());
+
             }
+
+            if (health <= 0) {
+                remove();
+                Vijand.setAantalVijanden(Vijand.getAantalVijanden() - 1);
+                System.out.println("Number of enemies: " + Vijand.getAantalVijanden());
+            }
+        }
+        if (Vijand.getAantalVijanden() <= 0) {
+            this.isaacOnTheStreets.setActiveScene(2);
         }
     }
 
-@Override
+    @Override
     public int getHealth() {
-
         return health;
     }
 }

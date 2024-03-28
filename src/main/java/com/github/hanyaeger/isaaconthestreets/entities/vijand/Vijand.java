@@ -22,10 +22,11 @@ public abstract class Vijand extends DynamicSpriteEntity implements Collider, Co
     // stati variable aanmaken die bijhoud hoeveel enemys er zijn
 
     private static int aantalVijanden = 0;
-    private IsaacOnTheStreets isaacOnTheStreets;
+    protected IsaacOnTheStreets isaacOnTheStreets;
     private int health = 6;
     private int damage = 1;
     private double snelheid = 3;
+
 
     protected Vijand(String resource, Coordinate2D initialLocation, Size size, int row, int column, final IsaacOnTheStreets isaacOnTheStreets) {
         super(resource, initialLocation, size, row, column);
@@ -39,36 +40,21 @@ public abstract class Vijand extends DynamicSpriteEntity implements Collider, Co
     public void onCollision(List<Collider> list) {
 
         double direction = getDirection() % 360;
-        var isaacCollision = false;
         var obstakelCollision = false;
-        var steenCollision = false;
         for (Collider collider : list) {
-            if (collider instanceof Isaac) {
-                isaacCollision = true;
-                // System.out.println("collision test!");
-                health -= 1; // damage dan wel van isaac
-            } else if (collider instanceof Steen) {
-                steenCollision = true;
-            }
             if (collider instanceof Obstakels) {
                 //  System.out.println("TEST obstakel colliosn");
                 obstakelCollision = true;
             }
         }
 
-
         if (obstakelCollision) {
             // randomzied functie
             Random rand = new Random();
             int nextdgrs = 0;
             nextdgrs = rand.nextInt((160 - 80) + 1) + 80;
-           // System.out.println(nextdgrs);
+            // System.out.println(nextdgrs);
             changeDirection(nextdgrs);
-
-        }
-
-        if (aantalVijanden == 0) {
-            this.isaacOnTheStreets.setActiveScene(3);
         }
 
     }
@@ -98,8 +84,8 @@ public abstract class Vijand extends DynamicSpriteEntity implements Collider, Co
         return aantalVijanden;
     }
 
-    public void setAantalVijanden(int aantalVijanden) {
-        this.aantalVijanden = aantalVijanden;
+    public static void setAantalVijanden(int aantalVijanden) {
+        Vijand.aantalVijanden = aantalVijanden;
     }
 
 
