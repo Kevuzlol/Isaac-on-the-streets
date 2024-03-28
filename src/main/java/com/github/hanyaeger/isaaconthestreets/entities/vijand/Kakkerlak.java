@@ -4,15 +4,18 @@ import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.entities.Direction;
 import com.github.hanyaeger.api.scenes.SceneBorder;
+import com.github.hanyaeger.isaaconthestreets.IsaacOnTheStreets;
 
 public class Kakkerlak  extends  Vijand{
 
+    private IsaacOnTheStreets isaacOnTheStreets;
     protected Kakkerlak(String resource, Coordinate2D initialLocation, Size size, int row, int column) {
-        super(resource, initialLocation, new Size(110, 110), 4,4);
+        super(resource, initialLocation, new Size(110, 110), 4,4,null);
         setAutoCycle(50, 0);
         setSnelheid(3);
         setDamage(1);
         setMotion(getSnelheid(), Direction.RIGHT);
+        this.isaacOnTheStreets = isaacOnTheStreets;
     }
 
 

@@ -12,6 +12,7 @@ import com.github.hanyaeger.isaaconthestreets.entities.mappen.Map;
 import com.github.hanyaeger.isaaconthestreets.entities.vijand.Ratten;
 
 import com.github.hanyaeger.isaaconthestreets.entities.text.HealthText;
+import com.github.hanyaeger.isaaconthestreets.entities.vijand.Vijand;
 import com.github.hanyaeger.isaaconthestreets.entities.vijand.Vlieg;
 
 
@@ -31,7 +32,7 @@ public class Level1scherm extends DynamicScene implements TileMapContainer {
 
     @Override
     public void setupEntities() {
-        Ratten ratten = new Ratten("sprites/rat_1.png", new Coordinate2D(100,100),IsaacOnTheStreets);
+        Ratten ratten = new Ratten("sprites/rat_1.png", new Coordinate2D(100,100));
         addEntity(ratten);
 
         Vlieg vlieg = new Vlieg("sprites/vlieg.png",new Coordinate2D(200,100));
@@ -42,6 +43,8 @@ public class Level1scherm extends DynamicScene implements TileMapContainer {
 
         addEntity(new Isaac(new Coordinate2D(1, 1), healthText, isaacOnTheStreets, this));
 
+        System.out.println("antal health");
+        System.out.println(Vijand.getHealth());
     }
 
     @Override
