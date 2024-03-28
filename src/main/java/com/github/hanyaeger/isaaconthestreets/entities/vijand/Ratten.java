@@ -11,17 +11,17 @@ import com.github.hanyaeger.isaaconthestreets.entities.Steen;
 import java.util.List;
 
 public class Ratten extends Vijand {
-    private IsaacOnTheStreets isaacOnTheStreets;
+
     private int health = 3;
 
-    public Ratten(String resource, Coordinate2D initialLocation) {
-        super(resource, initialLocation, new Size(110, 110), 4, 3, null);
+    public Ratten(String resource, Coordinate2D initialLocation, IsaacOnTheStreets isaacOnTheStreets) {
+        super(resource, initialLocation, new Size(110, 110), 4, 3, isaacOnTheStreets);
 
         setAutoCycle(25, 3);
         setSnelheid(5);
         setDamage(1);
         setMotion(getSnelheid(), Direction.LEFT);
-        this.isaacOnTheStreets = isaacOnTheStreets;
+
     }
 
 
@@ -60,22 +60,24 @@ public class Ratten extends Vijand {
             if (collider instanceof Steen) {
                 // Decrease health when colliding with a steen
                 health--;
+                System.out.println("health rat" + getHealth());
+
             }
 
             if (health <= 0) {
                 remove();
+                Vijand.setAantalVijanden(Vijand.getAantalVijanden() - 1);
+                System.out.println("Number of enemies: " + Vijand.getAantalVijanden());
             }
         }
-    }
-
-
-        @Override
-        public int getHealth () {
-            return health;
+        if (Vijand.getAantalVijanden() <= 0) {
+            this.isaacOnTheStreets.setActiveScene(2);
         }
-
-        // on collision
-//       if (health == 0) {
-//        this.isaacOnTheStreets.setActiveScene(2);
-//    }
     }
+
+    @Override
+    public int getHealth() {
+        return health;
+    }
+
+}
