@@ -9,6 +9,7 @@ import com.github.hanyaeger.isaaconthestreets.entities.Steen;
 import com.github.hanyaeger.isaaconthestreets.entities.mappen.Level1Map;
 import com.github.hanyaeger.isaaconthestreets.entities.vijand.Ratten;
 import com.github.hanyaeger.isaaconthestreets.entities.text.HealthText;
+import com.github.hanyaeger.isaaconthestreets.entities.vijand.Vijand;
 import com.github.hanyaeger.isaaconthestreets.entities.vijand.Vlieg;
 
 

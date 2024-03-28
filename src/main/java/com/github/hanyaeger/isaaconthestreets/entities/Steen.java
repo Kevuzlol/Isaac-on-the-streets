@@ -12,7 +12,7 @@ import com.github.hanyaeger.isaaconthestreets.entities.mappen.obstakels.Obstakel
 
 import java.util.List;
 
-public class Steen extends DynamicSpriteEntity implements Collided, SceneBorderCrossingWatcher {
+public class Steen extends DynamicSpriteEntity implements Collided,Collider, SceneBorderCrossingWatcher {
 
     public Steen(final Coordinate2D initialLocation, final Direction direction) {
         super("sprites/hanny.png", initialLocation, 2, 6);
@@ -28,7 +28,7 @@ public class Steen extends DynamicSpriteEntity implements Collided, SceneBorderC
     @Override
     public void onCollision(final List<Collider> collidingObjects) {
         for (Collider collider : collidingObjects) {
-            if (collider instanceof Isaac) {
+            if (collider instanceof Isaac || collider instanceof  Steen) {
             } else {
                 remove();
             }
