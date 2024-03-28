@@ -15,7 +15,7 @@ public class Level3scherm extends Levelscherm implements TileMapContainer {
 
     @Override
     public void setupScene() {
-        setBackgroundImage("backgrounds/boss_level.jpeg");
+        setBackgroundImage("backgrounds/level3background.jpeg");
     }
 
     @Override
