@@ -49,12 +49,7 @@ public abstract class Vijand extends DynamicSpriteEntity implements Collider, Co
         }
 
         if (obstakelCollision) {
-            // randomzied functie
-            Random rand = new Random();
-            int nextdgrs = 0;
-            nextdgrs = rand.nextInt((160 - 80) + 1) + 80;
-            // System.out.println(nextdgrs);
-            changeDirection(nextdgrs);
+            changeDirection(80d);
         }
 
     }

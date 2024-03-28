@@ -6,27 +6,23 @@ import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.Direction;
 import com.github.hanyaeger.api.scenes.SceneBorder;
 import com.github.hanyaeger.isaaconthestreets.IsaacOnTheStreets;
-import com.github.hanyaeger.isaaconthestreets.entities.Isaac;
 import com.github.hanyaeger.isaaconthestreets.entities.Steen;
 
 import java.util.List;
 
-public class Vlieg extends Vijand {
+public class Stopbord extends  Vijand{
 
-    private int health = 5;
-    private IsaacOnTheStreets isaacOnTheStreets;
+    private int health = 4;
 
-    public Vlieg(String resource, Coordinate2D initialLocation, IsaacOnTheStreets isaacOnTheStreets) {
-        super(resource, initialLocation, new Size(110, 110), 4, 4,   isaacOnTheStreets);
+    public Stopbord (String resource, Coordinate2D initialLocation, IsaacOnTheStreets isaacOnTheStreets) {
+        super(resource, initialLocation, new Size(110, 110), 1, 1, isaacOnTheStreets);
 
         setAutoCycle(50, 0);
-        setSnelheid(3);
-        setDamage(1);
+        setSnelheid(1);
+        setDamage(3);
         setMotion(getSnelheid(), Direction.RIGHT);
         this.isaacOnTheStreets = isaacOnTheStreets;
-
     }
-
 
     @Override
     public void notifyBoundaryTouching(SceneBorder sceneBorder) {
@@ -78,4 +74,6 @@ public class Vlieg extends Vijand {
     public int getHealth() {
         return health;
     }
+
+
 }

@@ -63,7 +63,6 @@ public class Ratten extends Vijand {
                 System.out.println("health rat" + getHealth());
 
             }
-
             if (health <= 0) {
                 remove();
                 Vijand.setAantalVijanden(Vijand.getAantalVijanden() - 1);

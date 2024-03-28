@@ -7,6 +7,7 @@ import com.github.hanyaeger.isaaconthestreets.entities.Isaac;
 import com.github.hanyaeger.isaaconthestreets.entities.mappen.Level1Map;
 import com.github.hanyaeger.isaaconthestreets.entities.vijand.Ratten;
 import com.github.hanyaeger.isaaconthestreets.entities.text.HealthText;
+import com.github.hanyaeger.isaaconthestreets.entities.vijand.Stopbord;
 import com.github.hanyaeger.isaaconthestreets.entities.vijand.Vlieg;
 
 
@@ -28,11 +29,14 @@ public class Level1scherm extends Levelscherm implements TileMapContainer {
 
         addEntity(new Isaac(new Coordinate2D(700, 40), healthText, isaacOnTheStreets, this));
 
-        Ratten ratten = new Ratten("sprites/rat_1.png", new Coordinate2D(200,200),isaacOnTheStreets);
+        Ratten ratten = new Ratten("sprites/rat_1.png", new Coordinate2D(200, 200), isaacOnTheStreets);
         addEntity(ratten);
 
-        Vlieg vlieg = new Vlieg("sprites/vlieg.png",new Coordinate2D(200,100));
+        Vlieg vlieg = new Vlieg("sprites/vlieg.png", new Coordinate2D(200, 100), isaacOnTheStreets);
         addEntity(vlieg);
+
+        Stopbord stopbord = new Stopbord("sprites/stopsign.png", new Coordinate2D(150, 200), isaacOnTheStreets);
+        addEntity(stopbord);
 
     }
 
