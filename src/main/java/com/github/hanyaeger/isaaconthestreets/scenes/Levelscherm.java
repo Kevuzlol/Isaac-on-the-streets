@@ -9,19 +9,17 @@ import com.github.hanyaeger.isaaconthestreets.entities.Isaac;
 import com.github.hanyaeger.isaaconthestreets.entities.Steen;
 import com.github.hanyaeger.isaaconthestreets.entities.mappen.Map;
 import com.github.hanyaeger.isaaconthestreets.entities.text.HealthText;
-import com.github.hanyaeger.isaaconthestreets.entities.vijand.Ratten;
 
 public abstract class Levelscherm extends DynamicScene implements TileMapContainer {
 
-    private IsaacOnTheStreets isaacOnTheStreets;
+    final IsaacOnTheStreets isaacOnTheStreets;
 
     public Levelscherm(IsaacOnTheStreets isaacOnTheStreets) {
         this.isaacOnTheStreets = isaacOnTheStreets;
     }
     @Override
     public void setupScene() {
-        // setBackgroundAudio("audio/young-wild-free.mp3");
-
+        setBackgroundAudio("audio/young-wild-free.mp3");
     }
 
     @Override
@@ -30,13 +28,8 @@ public abstract class Levelscherm extends DynamicScene implements TileMapContain
         addEntity(healthText);
 
         addEntity(new Isaac(new Coordinate2D(1, 1), healthText, isaacOnTheStreets, this));
-
     }
 
-    @Override
-    public void setupTileMaps() {
-        addTileMap(new Map());
-    }
     public void createSteen(final Coordinate2D coordinate2D, final Direction direction) {
         var steen = new Steen(coordinate2D, direction);
         addEntity(steen);
