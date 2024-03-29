@@ -24,9 +24,9 @@ public class Ratten extends Vijand {
 
     }
 
-    @Override
-    public int getHealth() {
-        return health;
-    }
+//    @Override
+//    public int getHealth() {
+//        return health;
+//    }
 
 }

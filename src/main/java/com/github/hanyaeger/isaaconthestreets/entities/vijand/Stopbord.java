@@ -24,10 +24,10 @@ public class Stopbord extends  Vijand{
         this.isaacOnTheStreets = isaacOnTheStreets;
     }
 
-    @Override
-    public int getHealth() {
-        return health;
-    }
+//    @Override
+//    public int getHealth() {
+//        return health;
+//    }
 
 
 }

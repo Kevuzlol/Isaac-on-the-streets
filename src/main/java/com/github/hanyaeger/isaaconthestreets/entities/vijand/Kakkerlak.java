@@ -39,9 +39,9 @@ public class Kakkerlak extends Vijand {
 
 
 
-    @Override
-    public int getHealth() {
-        return health;
-    }
+//    @Override
+//    public int getHealth() {
+//        return health;
+//    }
 
 }
