@@ -32,14 +32,14 @@ public class Level2scherm extends Levelscherm implements TileMapContainer {
 
         addEntity(new Isaac(new Coordinate2D(700, 40), healthText, schildText, isaacOnTheStreets, this));
 
-        Ratten rat1 = new Ratten("sprites/rat_1.png", new Coordinate2D(450,400),isaacOnTheStreets);
-        Ratten rat2 = new Ratten("sprites/rat_1.png", new Coordinate2D(400,500),isaacOnTheStreets);
+       // Ratten rat1 = new Ratten("sprites/rat_1.png", new Coordinate2D(450,400),isaacOnTheStreets);
+       // Ratten rat2 = new Ratten("sprites/rat_1.png", new Coordinate2D(400,500),isaacOnTheStreets);
         Ratten rat3 = new Ratten("sprites/rat_1.png", new Coordinate2D(400,600),isaacOnTheStreets);
 
 
 
-        addEntity(rat1);
-        addEntity(rat2);
+        //addEntity(rat1);
+       // addEntity(rat2);
         addEntity(rat3);
 
         StopKnop stopKnop = new StopKnop(new Coordinate2D(getWidth() / 2 + 390, getHeight() / 3 + 400), isaacOnTheStreets);

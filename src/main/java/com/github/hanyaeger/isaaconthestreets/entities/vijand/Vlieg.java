@@ -18,7 +18,7 @@ public class Vlieg extends Vijand {
     private IsaacOnTheStreets isaacOnTheStreets;
 
     public Vlieg(String resource, Coordinate2D initialLocation, IsaacOnTheStreets isaacOnTheStreets) {
-        super(resource, initialLocation, new Size(110, 110), 4, 4,   isaacOnTheStreets);
+        super(resource, initialLocation, new Size(110, 110), 4, 4,   isaacOnTheStreets,5);
 
         setAutoCycle(50, 0);
         setSnelheid(3);
@@ -51,5 +51,6 @@ public class Vlieg extends Vijand {
             this.isaacOnTheStreets.setActiveScene(2);
         }
     }
+
 
 }
