@@ -33,20 +33,20 @@ public class Level3scherm extends Levelscherm implements TileMapContainer {
         var schildText = new SchildText(new Coordinate2D(200, 50));
         addEntity(schildText);
 
-        Isaac isaac = new Isaac(new Coordinate2D(700, 40), healthText, schildText, isaacOnTheStreets, this);
+        var isaac = new Isaac(new Coordinate2D(700, 40), healthText, schildText, isaacOnTheStreets, this);
         addEntity(isaac);
 
         StopKnop stopKnop = new StopKnop(new Coordinate2D(getWidth() / 2 + 390, getHeight() / 3 + 400), isaacOnTheStreets);
         stopKnop.setAnchorPoint(AnchorPoint.TOP_CENTER);
         addEntity(stopKnop);
 
-        Stopbord stopbord1 = new Stopbord("sprites/stopsign.png", new Coordinate2D(500, 600), isaacOnTheStreets);
+        Stopbord stopbord1 = new Stopbord("sprites/stopsign.png", new Coordinate2D(500, 600), isaacOnTheStreets, isaac);
         addEntity(stopbord1);
 
-        Stopbord stopbord2 = new Stopbord("sprites/stopsign.png", new Coordinate2D(170, 300), isaacOnTheStreets);
+        Stopbord stopbord2 = new Stopbord("sprites/stopsign.png", new Coordinate2D(170, 300), isaacOnTheStreets, isaac);
         addEntity(stopbord2);
 
-        Vlieg vlieg = new Vlieg("sprites/vlieg.png", new Coordinate2D(200, 100), isaacOnTheStreets);
+        Vlieg vlieg = new Vlieg("sprites/vlieg.png", new Coordinate2D(200, 100), isaacOnTheStreets, isaac);
         addEntity(vlieg);
 
 

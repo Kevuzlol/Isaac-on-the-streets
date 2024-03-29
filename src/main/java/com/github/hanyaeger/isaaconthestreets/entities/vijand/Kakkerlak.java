@@ -22,7 +22,7 @@ public class Kakkerlak extends Vijand {
     private IsaacOnTheStreets isaacOnTheStreets;
 
     public Kakkerlak(String resource, Coordinate2D initialLocation, IsaacOnTheStreets isaacOnTheStreets,Isaac isaac) {
-        super(resource, initialLocation, new Size(100, 100), 7,14, isaacOnTheStreets);
+        super(resource, initialLocation, new Size(100, 100), 7,14, isaacOnTheStreets, isaac);
         setAutoCycle(80, 0);
         setSnelheid(7);
         setDamage(1);
