@@ -26,7 +26,7 @@ public abstract class Vijand extends DynamicSpriteEntity implements Collider, Co
     private int ontvangenPowerupDamage = 2;
     private int geefDamage = 1;
     private double snelheid = 3;
-    private boolean powerupIisActief = false;
+    private static boolean powerupIsActief = false;
 
 
 
@@ -55,7 +55,7 @@ public abstract class Vijand extends DynamicSpriteEntity implements Collider, Co
             changeDirection(80d);
         }
         if(steenCollision){
-            if(powerupIisActief) {
+            if(powerupIsActief) {
                 health -= ontvangenPowerupDamage;
             } else {
                 health -= standardDamage;
@@ -129,8 +129,8 @@ public abstract class Vijand extends DynamicSpriteEntity implements Collider, Co
         this.health = health;
     }
 
-    public boolean getPowerUpisactief(){
-        return powerupIisActief;
+    public static boolean getPowerUpisactief(){
+        return powerupIsActief;
     }
 
     public void setOntvangenPowerupDamage( int ontvangenPowerupDamage){
