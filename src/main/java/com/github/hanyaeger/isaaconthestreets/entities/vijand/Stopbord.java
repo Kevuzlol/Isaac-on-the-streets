@@ -15,8 +15,8 @@ public class Stopbord extends  Vijand{
 
     private int health = 4;
 
-    public Stopbord (String resource, Coordinate2D initialLocation, IsaacOnTheStreets isaacOnTheStreets, Isaac isaac) {
-        super(resource, initialLocation, new Size(110, 110), 1, 1, isaacOnTheStreets, isaac);
+    public Stopbord (String resource, Coordinate2D initialLocation, IsaacOnTheStreets isaacOnTheStreets) {
+        super(resource, initialLocation, new Size(110, 110), 1, 1, isaacOnTheStreets,4);
 
         setAutoCycle(50, 0);
         setSnelheid(1);
@@ -25,10 +25,6 @@ public class Stopbord extends  Vijand{
         this.isaacOnTheStreets = isaacOnTheStreets;
     }
 
-//    @Override
-//    public int getHealth() {
-//        return health;
-//    }
 
 
 }

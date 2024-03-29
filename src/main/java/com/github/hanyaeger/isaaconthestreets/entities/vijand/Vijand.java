@@ -28,11 +28,13 @@ public abstract class Vijand extends DynamicSpriteEntity implements Collider, Co
     private double snelheid = 3;
     private static boolean powerupIsActief = false;
 
-    public Vijand(String resource, Coordinate2D initialLocation, Size size, int row, int column, final IsaacOnTheStreets isaacOnTheStreets, Isaac isaac) {
+
+
+    public Vijand(String resource, Coordinate2D initialLocation, Size size, int row, int column, final IsaacOnTheStreets isaacOnTheStreets,int health) {
         super(resource, initialLocation, size, row, column);
         // setmotion voor speed en beweging
         this.isaacOnTheStreets = isaacOnTheStreets;
-        this.isaac = isaac;
+        this.health=health;
         aantalVijanden++;
     }
 

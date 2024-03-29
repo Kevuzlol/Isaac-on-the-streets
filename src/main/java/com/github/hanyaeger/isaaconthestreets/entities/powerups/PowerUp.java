@@ -9,7 +9,7 @@ import com.github.hanyaeger.isaaconthestreets.entities.Isaac;
 
 import java.util.List;
 
-public class PowerUp extends SpriteEntity implements Collided, Collider {
+public abstract class PowerUp extends SpriteEntity implements Collided, Collider {
     public PowerUp(final Coordinate2D location, final Size size, final String resource) {
         super(resource, location, size);
     }
