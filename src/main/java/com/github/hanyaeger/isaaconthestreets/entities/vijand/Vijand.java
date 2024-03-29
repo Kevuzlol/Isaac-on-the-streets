@@ -4,15 +4,13 @@ import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.entities.Collided;
 import com.github.hanyaeger.api.entities.Collider;
-
 import com.github.hanyaeger.api.entities.SceneBorderTouchingWatcher;
-import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;import java.util.Random;
+import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
+
 import com.github.hanyaeger.api.scenes.SceneBorder;
 import com.github.hanyaeger.isaaconthestreets.IsaacOnTheStreets;
-import com.github.hanyaeger.isaaconthestreets.entities.Isaac;
 import com.github.hanyaeger.isaaconthestreets.entities.Steen;
 import com.github.hanyaeger.isaaconthestreets.entities.mappen.obstakels.Obstakels;
-import com.github.hanyaeger.api.entities.Direction;
 
 import java.util.List;
 
@@ -24,8 +22,12 @@ public abstract class Vijand extends DynamicSpriteEntity implements Collider, Co
     private static int aantalVijanden = 0;
     protected IsaacOnTheStreets isaacOnTheStreets;
     private int health = 6;
-    private int damage = 1;
+    private int standardDamage = 1;
+    private int ontvangenPowerupDamage = 2;
+    private int geefDamage = 1;
     private double snelheid = 3;
+    private boolean powerupIisActief = false;
+
 
 
     protected Vijand(String resource, Coordinate2D initialLocation, Size size, int row, int column, final IsaacOnTheStreets isaacOnTheStreets) {
@@ -41,17 +43,37 @@ public abstract class Vijand extends DynamicSpriteEntity implements Collider, Co
 
         double direction = getDirection() % 360;
         var obstakelCollision = false;
+        var steenCollision = false;
         for (Collider collider : list) {
             if (collider instanceof Obstakels) {
                 //  System.out.println("TEST obstakel colliosn");
                 obstakelCollision = true;
             }
-        }
+            if (collider instanceof Steen) {
+                steenCollision = true;
+                // Decrease health when colliding with a steen
 
+            }
+        }
         if (obstakelCollision) {
             changeDirection(80d);
         }
+        if(steenCollision){
+            if(powerupIisActief) {
+                health -= ontvangenPowerupDamage;
+            } else {
+                health -= standardDamage;
+            }
 
+        }
+        if (health <= 0) {
+                remove();
+                Vijand.setAantalVijanden(Vijand.getAantalVijanden() - 1);
+                System.out.println("Number of enemies: " + Vijand.getAantalVijanden());
+            }
+        if (Vijand.getAantalVijanden() <= 0) {
+            this.isaacOnTheStreets.setActiveScene(2);
+        }
     }
 
     @Override
@@ -80,7 +102,7 @@ public abstract class Vijand extends DynamicSpriteEntity implements Collider, Co
 
     // snelheid en damage
     public void setDamage(int damage) {
-        this.damage = damage;
+        this.geefDamage = damage;
     }
 
     public void setSnelheid(double snelheid) {
@@ -111,6 +133,13 @@ public abstract class Vijand extends DynamicSpriteEntity implements Collider, Co
         this.health = health;
     }
 
+    public boolean getPowerUpisactief(){
+        return powerupIisActief;
+    }
+
+    public void setOntvangenPowerupDamage( int ontvangenPowerupDamage){
+        this.ontvangenPowerupDamage = ontvangenPowerupDamage;
+    }
 }
 
 
