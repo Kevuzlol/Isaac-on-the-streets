@@ -9,6 +9,9 @@ import javafx.scene.input.KeyCode;
 import java.util.Set;
 
 public class IsaacOnTheStreets extends YaegerGame {
+
+    private int score = 0;
+
     public static void main(String[] args) {
         launch(args);
     }
@@ -31,4 +34,11 @@ public class IsaacOnTheStreets extends YaegerGame {
         addScene(6, new Level3scherm(this));
     }
 
+    public int getScore(){
+        return score;
+    }
+
+    public void addScore(int scoreToevoegen){
+        this.score += scoreToevoegen;
+    }
 }
