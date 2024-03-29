@@ -15,7 +15,7 @@ public abstract class Map extends TileMap {
     public void setupEntities() {
         addEntity(1, Muren.class, "sprites/wall.jpeg");
         addEntity(2, Box.class, "sprites/box.jpeg");
-        addEntity(3, Verkeersbord.class, "sprites/stopsign2.png");
+        addEntity(3, Verkeersbord.class, "sprites/stopsign.png");
 
         addEntity(10, Hartje.class, "sprites/hartje.png");
         addEntity(11, Speed.class, "sprites/pil.jpeg");
