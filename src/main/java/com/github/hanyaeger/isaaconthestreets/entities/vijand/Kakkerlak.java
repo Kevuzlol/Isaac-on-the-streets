@@ -22,8 +22,8 @@ public class Kakkerlak extends Vijand {
     private IsaacOnTheStreets isaacOnTheStreets;
 
     public Kakkerlak(String resource, Coordinate2D initialLocation, IsaacOnTheStreets isaacOnTheStreets,Isaac isaac) {
-        super(resource, initialLocation, new Size(110, 110), 15,20, isaacOnTheStreets);
-        setAutoCycle(70, 0);
+        super(resource, initialLocation, new Size(100, 100), 7,14, isaacOnTheStreets);
+        setAutoCycle(80, 0);
         setSnelheid(7);
         setDamage(1);
         setMotion(getSnelheid(), Direction.RIGHT);

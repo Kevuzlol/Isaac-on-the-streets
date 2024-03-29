@@ -35,6 +35,8 @@ public class Level2scherm extends Levelscherm implements TileMapContainer {
         Ratten rat2 = new Ratten("sprites/rat_1.png", new Coordinate2D(400,500),isaacOnTheStreets);
         Ratten rat3 = new Ratten("sprites/rat_1.png", new Coordinate2D(400,600),isaacOnTheStreets);
 
+
+
         addEntity(rat1);
         addEntity(rat2);
         addEntity(rat3);

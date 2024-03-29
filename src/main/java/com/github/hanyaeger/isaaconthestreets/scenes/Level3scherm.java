@@ -11,6 +11,8 @@ import com.github.hanyaeger.isaaconthestreets.entities.text.HealthText;
 import com.github.hanyaeger.isaaconthestreets.entities.text.SchildText;
 import com.github.hanyaeger.isaaconthestreets.entities.vijand.Kakkerlak;
 import com.github.hanyaeger.isaaconthestreets.entities.vijand.Ratten;
+import com.github.hanyaeger.isaaconthestreets.entities.vijand.Stopbord;
+import com.github.hanyaeger.isaaconthestreets.entities.vijand.Vlieg;
 
 public class Level3scherm extends Levelscherm implements TileMapContainer {
 
@@ -36,6 +38,20 @@ public class Level3scherm extends Levelscherm implements TileMapContainer {
         StopKnop stopKnop = new StopKnop(new Coordinate2D(getWidth() / 2 + 390, getHeight() / 3 + 400), isaacOnTheStreets);
         stopKnop.setAnchorPoint(AnchorPoint.TOP_CENTER);
         addEntity(stopKnop);
+
+        Stopbord stopbord1 = new Stopbord("sprites/stopsign.png", new Coordinate2D(200, 500), isaacOnTheStreets);
+        addEntity(stopbord1);
+
+        Stopbord stopbord2 = new Stopbord("sprites/stopsign.png", new Coordinate2D(100, 300), isaacOnTheStreets);
+        addEntity(stopbord2);
+
+        Vlieg vlieg = new Vlieg("sprites/vlieg.png", new Coordinate2D(200, 100), isaacOnTheStreets);
+        addEntity(vlieg);
+
+
+
+
+
 
 
         Kakkerlak kakkerlak = new Kakkerlak("sprites/kakkerlak.png", new Coordinate2D(400, 600), isaacOnTheStreets, isaac);

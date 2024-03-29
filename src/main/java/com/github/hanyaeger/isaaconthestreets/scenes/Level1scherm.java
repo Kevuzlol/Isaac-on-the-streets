@@ -40,8 +40,7 @@ public class Level1scherm extends Levelscherm implements TileMapContainer {
         Vlieg vlieg = new Vlieg("sprites/vlieg.png", new Coordinate2D(200, 100), isaacOnTheStreets);
         addEntity(vlieg);
 
-        Stopbord stopbord = new Stopbord("sprites/stopsign.png", new Coordinate2D(200, 200), isaacOnTheStreets);
-        addEntity(stopbord);
+
 
         StopKnop stopKnop = new StopKnop(new Coordinate2D(getWidth() / 2 + 390, getHeight() / 3 + 400), isaacOnTheStreets);
         stopKnop.setAnchorPoint(AnchorPoint.TOP_CENTER);
