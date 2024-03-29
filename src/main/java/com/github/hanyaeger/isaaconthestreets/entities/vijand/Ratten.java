@@ -51,29 +51,6 @@ public class Ratten extends Vijand {
         }
     }
 
-
-    @Override
-    public void onCollision(List<Collider> list) {
-        super.onCollision(list); // Call superclass implementation for common collision handling
-
-        for (Collider collider : list) {
-            if (collider instanceof Steen) {
-                // Decrease health when colliding with a steen
-                health--;
-                System.out.println("health rat" + getHealth());
-
-            }
-            if (health <= 0) {
-                remove();
-                Vijand.setAantalVijanden(Vijand.getAantalVijanden() - 1);
-                System.out.println("Number of enemies: " + Vijand.getAantalVijanden());
-            }
-        }
-        if (Vijand.getAantalVijanden() <= 0) {
-            this.isaacOnTheStreets.setActiveScene(2);
-        }
-    }
-
     @Override
     public int getHealth() {
         return health;

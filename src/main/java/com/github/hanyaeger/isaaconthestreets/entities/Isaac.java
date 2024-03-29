@@ -93,7 +93,7 @@ public class Isaac extends DynamicSpriteEntity implements SceneBorderTouchingWat
             } else if (collider instanceof Speed) {
                 snelheidVermeenigvuldiger = 2;
             } else if (collider instanceof Hartje) {
-                healthText.setText(health++);
+                healthText.setText(++health);
             } else if (collider instanceof Heroine) {
                 schild = true;
                 schildText.setText("Schild");
