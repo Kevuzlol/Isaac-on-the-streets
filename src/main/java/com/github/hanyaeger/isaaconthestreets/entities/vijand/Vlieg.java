@@ -37,10 +37,7 @@ public class Vlieg extends Vijand {
             }
         }
         if(steenCollision){
-            if(Vijand.getPowerUpisactief()) {
-                health--;
-            }
-
+            health -= isaac.doeSchade();
         }
         if (health <= 0) {
             remove();
@@ -48,6 +45,7 @@ public class Vlieg extends Vijand {
             System.out.println("Number of enemies: " + Vijand.getAantalVijanden());
         }
         if (Vijand.getAantalVijanden() <= 0) {
+            isaacOnTheStreets.addScore(isaac.getIsaacHealth());
             this.isaacOnTheStreets.setActiveScene(2);
         }
     }

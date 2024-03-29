@@ -24,8 +24,6 @@ public abstract class Vijand extends DynamicSpriteEntity implements Collider, Co
     protected IsaacOnTheStreets isaacOnTheStreets;
     protected Isaac isaac;
     private int health = 6;
-    private int standardDamage = 1;
-    private int ontvangenPowerupDamage = 2;
     private int geefDamage = 1;
     private double snelheid = 3;
     private static boolean powerupIsActief = false;
@@ -56,12 +54,7 @@ public abstract class Vijand extends DynamicSpriteEntity implements Collider, Co
             changeDirection(80d);
         }
         if(steenCollision){
-            if(powerupIsActief) {
-                health -= ontvangenPowerupDamage;
-            } else {
-                health -= standardDamage;
-            }
-
+                health -= isaac.doeSchade();
         }
         if (health <= 0) {
                 remove();
@@ -133,10 +126,6 @@ public abstract class Vijand extends DynamicSpriteEntity implements Collider, Co
 
     public static boolean getPowerUpisactief(){
         return powerupIsActief;
-    }
-
-    public void setOntvangenPowerupDamage( int ontvangenPowerupDamage){
-        this.ontvangenPowerupDamage = ontvangenPowerupDamage;
     }
 }
 
