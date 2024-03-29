@@ -24,28 +24,6 @@ public class Stopbord extends  Vijand{
         this.isaacOnTheStreets = isaacOnTheStreets;
     }
 
-    @Override
-    public void notifyBoundaryTouching(SceneBorder sceneBorder) {
-        changeDirection(120D);
-//        changeDirection(getDirection());
-        double direction = getDirection() % 360;
-        if (direction >= 0 && direction < 90) {
-            setAutoCycleRow(2);
-            // System.out.println(getAutoCycleRow());
-        } else if (direction >= 90 && direction < 180) {
-            setAutoCycleRow(1);
-            // System.out.println(getAutoCycleRow());
-
-        } else if (direction >= 180 && direction < 270) {
-            setAutoCycleRow(2);
-            // System.out.println(getAutoCycleRow());
-
-        } else if (direction >= 269 && direction < 360) {
-            setAutoCycleRow(3);
-            // System.out.println(getAutoCycleRow());
-
-        }
-    }
 
 
     @Override
