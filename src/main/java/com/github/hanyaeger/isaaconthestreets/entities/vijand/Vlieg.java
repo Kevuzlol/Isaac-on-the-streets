@@ -17,19 +17,17 @@ public class Vlieg extends Vijand {
     private int health = 5;
     private IsaacOnTheStreets isaacOnTheStreets;
 
-    public Vlieg(String resource, Coordinate2D initialLocation, IsaacOnTheStreets isaacOnTheStreets) {
-        super(resource, initialLocation, new Size(110, 110), 4, 4,   isaacOnTheStreets,5);
+    public Vlieg(String resource, Coordinate2D initialLocation, IsaacOnTheStreets isaacOnTheStreets, Isaac isaac) {
+        super(resource, initialLocation, new Size(110, 110), 4, 4,   isaacOnTheStreets,5, isaac);
 
         setAutoCycle(50, 0);
         setSnelheid(3);
         setDamage(1);
         setMotion(getSnelheid(), Direction.RIGHT);
         this.isaacOnTheStreets = isaacOnTheStreets;
-
     }
     @Override
     public void onCollision(List<Collider> list) {
-        var obstakelCollision = false;
         var steenCollision = false;
         for (Collider collider : list) {
             if (collider instanceof Steen) {

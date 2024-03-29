@@ -15,8 +15,8 @@ public class Ratten extends Vijand {
 
     private int health = 3;
 
-    public Ratten(String resource, Coordinate2D initialLocation, IsaacOnTheStreets isaacOnTheStreets) {
-        super(resource, initialLocation, new Size(90, 90), 4, 3, isaacOnTheStreets,3);
+    public Ratten(String resource, Coordinate2D initialLocation, IsaacOnTheStreets isaacOnTheStreets, Isaac isaac) {
+        super(resource, initialLocation, new Size(90, 90), 4, 3, isaacOnTheStreets,3, isaac);
 
         setAutoCycle(25, 3);
         setSnelheid(5);
