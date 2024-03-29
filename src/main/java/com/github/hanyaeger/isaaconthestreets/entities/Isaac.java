@@ -32,6 +32,7 @@ public class Isaac extends DynamicSpriteEntity implements SceneBorderTouchingWat
     private HealthText healthText;
     private SchildText schildText;
     private int health = 3;
+    private int schade = 1;
     private boolean schild = false;
     private int snelheidVermeenigvuldiger = 1;
     private long kwetsbaarheidTijd;
@@ -100,6 +101,7 @@ public class Isaac extends DynamicSpriteEntity implements SceneBorderTouchingWat
                 schild = true;
                 schildText.setText("Schild");
             } else if (collider instanceof CrystalMeth){
+                schade += 1;
                 var popSound = new SoundClip("audio/Moffel.mp3");
                 popSound.play();
             }
@@ -159,5 +161,9 @@ public class Isaac extends DynamicSpriteEntity implements SceneBorderTouchingWat
 
     public int getIsaacHealth() {
         return health;
+    }
+
+    public int doeSchade(){
+        return schade;
     }
 }
