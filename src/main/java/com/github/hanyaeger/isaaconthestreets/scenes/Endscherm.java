@@ -5,6 +5,7 @@ import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.entities.impl.TextEntity;
 import com.github.hanyaeger.api.scenes.DynamicScene;
+import com.github.hanyaeger.api.scenes.StaticScene;
 import com.github.hanyaeger.isaaconthestreets.IsaacOnTheStreets;
 import com.github.hanyaeger.isaaconthestreets.entities.knoppen.Level2Knop;
 import com.github.hanyaeger.isaaconthestreets.entities.knoppen.PlayAgainKnop;
@@ -15,7 +16,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 
-public class Endscherm extends DynamicScene {
+public class Endscherm extends StaticScene {
     private IsaacOnTheStreets isaacOnTheStreets;
 
     public Endscherm(IsaacOnTheStreets isaacOnTheStreets) {
@@ -25,7 +26,7 @@ public class Endscherm extends DynamicScene {
     public void setupScene() {
         //setBackgroundAudio("");
         setBackgroundImage("backgrounds/endScreen_isaacOnTheStreets.jpeg");
-        //setBackgroundColor(Color.BLUE); // testing
+
     }
 
     @Override
