@@ -152,5 +152,7 @@ public class Isaac extends DynamicSpriteEntity implements SceneBorderTouchingWat
         }
     }
 
-
+    public int getIsaacHealth() {
+        return health;
+    }
 }
