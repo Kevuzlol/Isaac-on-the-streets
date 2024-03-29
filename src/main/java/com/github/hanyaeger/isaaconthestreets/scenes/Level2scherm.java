@@ -8,6 +8,7 @@ import com.github.hanyaeger.isaaconthestreets.entities.Isaac;
 import com.github.hanyaeger.isaaconthestreets.entities.knoppen.StopKnop;
 import com.github.hanyaeger.isaaconthestreets.entities.mappen.Level2Map;
 import com.github.hanyaeger.isaaconthestreets.entities.text.HealthText;
+import com.github.hanyaeger.isaaconthestreets.entities.text.SchildText;
 import com.github.hanyaeger.isaaconthestreets.entities.vijand.Ratten;
 
 public class Level2scherm extends Levelscherm implements TileMapContainer {
@@ -24,13 +25,16 @@ public class Level2scherm extends Levelscherm implements TileMapContainer {
     @Override
     public void setupEntities() {
         var healthText = new HealthText(new Coordinate2D(50, 50));
-        addEntity(new HealthText(new Coordinate2D(50, 50)));
+        addEntity(healthText);
+        var schildText = new SchildText(new Coordinate2D(200, 50));
+        addEntity(schildText);
 
-        addEntity(new Isaac(new Coordinate2D(400, 40), healthText, isaacOnTheStreets, this));
+        addEntity(new Isaac(new Coordinate2D(700, 40), healthText, schildText, isaacOnTheStreets, this));
 
         Ratten rat1 = new Ratten("sprites/rat_1.png", new Coordinate2D(400,200),isaacOnTheStreets);
         Ratten rat2 = new Ratten("sprites/rat_1.png", new Coordinate2D(400,400),isaacOnTheStreets);
         Ratten rat3 = new Ratten("sprites/rat_1.png", new Coordinate2D(400,600),isaacOnTheStreets);
+
         addEntity(rat1);
         addEntity(rat2);
         addEntity(rat3);

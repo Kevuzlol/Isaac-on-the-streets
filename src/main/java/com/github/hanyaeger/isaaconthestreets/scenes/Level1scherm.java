@@ -7,6 +7,7 @@ import com.github.hanyaeger.isaaconthestreets.IsaacOnTheStreets;
 import com.github.hanyaeger.isaaconthestreets.entities.Isaac;
 import com.github.hanyaeger.isaaconthestreets.entities.knoppen.StopKnop;
 import com.github.hanyaeger.isaaconthestreets.entities.mappen.Level1Map;
+import com.github.hanyaeger.isaaconthestreets.entities.text.SchildText;
 import com.github.hanyaeger.isaaconthestreets.entities.vijand.Ratten;
 import com.github.hanyaeger.isaaconthestreets.entities.text.HealthText;
 import com.github.hanyaeger.isaaconthestreets.entities.vijand.Stopbord;
@@ -28,8 +29,10 @@ public class Level1scherm extends Levelscherm implements TileMapContainer {
     public void setupEntities() {
         var healthText = new HealthText(new Coordinate2D(50, 50));
         addEntity(healthText);
+        var schildText = new SchildText(new Coordinate2D(200, 50));
+        addEntity(schildText);
 
-        addEntity(new Isaac(new Coordinate2D(700, 40), healthText, isaacOnTheStreets, this));
+        addEntity(new Isaac(new Coordinate2D(700, 40), healthText, schildText, isaacOnTheStreets, this));
 
         Ratten ratten = new Ratten("sprites/rat_1.png", new Coordinate2D(200, 200), isaacOnTheStreets);
         addEntity(ratten);

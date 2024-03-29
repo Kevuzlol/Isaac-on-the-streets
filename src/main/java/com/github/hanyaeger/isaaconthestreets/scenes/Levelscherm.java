@@ -24,10 +24,7 @@ public abstract class Levelscherm extends DynamicScene implements TileMapContain
 
     @Override
     public void setupEntities() {
-        var healthText = new HealthText(new Coordinate2D(100, 0));
-        addEntity(healthText);
 
-        addEntity(new Isaac(new Coordinate2D(1, 1), healthText, isaacOnTheStreets, this));
     }
 
     public void createSteen(final Coordinate2D coordinate2D, final Direction direction) {

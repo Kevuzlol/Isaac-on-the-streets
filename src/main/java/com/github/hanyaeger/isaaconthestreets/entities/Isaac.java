@@ -12,8 +12,10 @@ import com.github.hanyaeger.api.userinput.KeyListener;
 import com.github.hanyaeger.isaaconthestreets.IsaacOnTheStreets;
 import com.github.hanyaeger.isaaconthestreets.entities.mappen.obstakels.Obstakels;
 import com.github.hanyaeger.isaaconthestreets.entities.powerups.Hartje;
+import com.github.hanyaeger.isaaconthestreets.entities.powerups.Heroine;
 import com.github.hanyaeger.isaaconthestreets.entities.powerups.Speed;
 import com.github.hanyaeger.isaaconthestreets.entities.text.HealthText;
+import com.github.hanyaeger.isaaconthestreets.entities.text.SchildText;
 import com.github.hanyaeger.isaaconthestreets.entities.vijand.Vijand;
 import com.github.hanyaeger.isaaconthestreets.scenes.Levelscherm;
 import javafx.scene.input.KeyCode;
@@ -26,14 +28,16 @@ public class Isaac extends DynamicSpriteEntity implements SceneBorderTouchingWat
     private final IsaacOnTheStreets isaacOnTheStreets;
     private final Levelscherm level;
     private HealthText healthText;
+    private SchildText schildText;
     private int health = 3;
+    private boolean schild = false;
     private int snelheidVermeenigvuldiger = 1;
-    private long healthTijd;
+    private long kwetsbaarheidTijd;
     private long gooiSteenTimer;
     private long gooiSteenWachttijd = 500;
     private int onkwetsbaarTijd = 3000;
 
-    public Isaac(Coordinate2D initialLocation, HealthText healthText, final IsaacOnTheStreets isaacOnTheStreets, Levelscherm level) {
+    public Isaac(Coordinate2D initialLocation, HealthText healthText, SchildText schildText, final IsaacOnTheStreets isaacOnTheStreets, Levelscherm level) {
         super("sprites/isaac.png", initialLocation, new Size(40, 40), 12, 16);
 
         this.isaacOnTheStreets = isaacOnTheStreets;
@@ -41,6 +45,8 @@ public class Isaac extends DynamicSpriteEntity implements SceneBorderTouchingWat
 
         this.healthText = healthText;
         healthText.setText(health);
+        this.schildText = schildText;
+
     }
 
     @Override
@@ -60,7 +66,7 @@ public class Isaac extends DynamicSpriteEntity implements SceneBorderTouchingWat
         }
 
         if (pressedKeys.contains(KeyCode.SPACE)) {
-            if(System.currentTimeMillis() - gooiSteenTimer >= gooiSteenWachttijd) {
+            if (System.currentTimeMillis() - gooiSteenTimer >= gooiSteenWachttijd) {
                 gooiSteenTimer = System.currentTimeMillis();
 
                 Coordinate2D location;
@@ -88,6 +94,9 @@ public class Isaac extends DynamicSpriteEntity implements SceneBorderTouchingWat
                 snelheidVermeenigvuldiger = 2;
             } else if (collider instanceof Hartje) {
                 healthText.setText(++health);
+            } else if (collider instanceof Heroine) {
+                schild = true;
+                schildText.setText("Schild");
             }
         }
 
@@ -106,13 +115,18 @@ public class Isaac extends DynamicSpriteEntity implements SceneBorderTouchingWat
             }
         }
 
-        if(vijandCollision){
-            if (System.currentTimeMillis() - healthTijd >= onkwetsbaarTijd) {
-                healthText.setText(--health);
-                healthTijd = System.currentTimeMillis();
-            }
-            if (health <= 0) {
-                this.isaacOnTheStreets.setActiveScene(3);
+        if (vijandCollision) {
+            if (System.currentTimeMillis() - kwetsbaarheidTijd >= onkwetsbaarTijd) {
+                if (schild == true) {
+                    schild = false;
+                    schildText.setText("");
+                } else {
+                    healthText.setText(--health);
+                }
+                kwetsbaarheidTijd = System.currentTimeMillis();
+                if (health <= 0) {
+                    this.isaacOnTheStreets.setActiveScene(3);
+                }
             }
         }
     }
@@ -137,6 +151,4 @@ public class Isaac extends DynamicSpriteEntity implements SceneBorderTouchingWat
                 break;
         }
     }
-
-
 }

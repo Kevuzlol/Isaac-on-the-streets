@@ -6,6 +6,7 @@ import com.github.hanyaeger.isaaconthestreets.IsaacOnTheStreets;
 import com.github.hanyaeger.isaaconthestreets.entities.Isaac;
 import com.github.hanyaeger.isaaconthestreets.entities.mappen.Level3Map;
 import com.github.hanyaeger.isaaconthestreets.entities.text.HealthText;
+import com.github.hanyaeger.isaaconthestreets.entities.text.SchildText;
 
 public class Level3scherm extends Levelscherm implements TileMapContainer {
 
@@ -21,10 +22,13 @@ public class Level3scherm extends Levelscherm implements TileMapContainer {
     @Override
     public void setupEntities() {
         var healthText = new HealthText(new Coordinate2D(50, 50));
-        addEntity(new HealthText(new Coordinate2D(50, 50)));
+        addEntity(healthText);
+        var schildText = new SchildText(new Coordinate2D(200, 50));
+        addEntity(schildText);
 
-        addEntity(new Isaac(new Coordinate2D(700, 40), healthText, isaacOnTheStreets, this));
+        addEntity(new Isaac(new Coordinate2D(700, 40), healthText, schildText, isaacOnTheStreets, this));
 
+        
     }
 
     @Override
