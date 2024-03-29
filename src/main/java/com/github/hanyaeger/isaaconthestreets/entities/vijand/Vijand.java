@@ -40,8 +40,6 @@ public abstract class Vijand extends DynamicSpriteEntity implements Collider, Co
     // inplaats van methode doedamage gelijk in de oncollision
     @Override
     public void onCollision(List<Collider> list) {
-
-        double direction = getDirection() % 360;
         var obstakelCollision = false;
         var steenCollision = false;
         for (Collider collider : list) {
@@ -51,8 +49,6 @@ public abstract class Vijand extends DynamicSpriteEntity implements Collider, Co
             }
             if (collider instanceof Steen) {
                 steenCollision = true;
-                // Decrease health when colliding with a steen
-
             }
         }
         if (obstakelCollision) {

@@ -24,33 +24,6 @@ public class Ratten extends Vijand {
 
     }
 
-
-    @Override
-    public void notifyBoundaryTouching(SceneBorder sceneBorder) {
-        changeDirection(80D);
-//        changeDirection(getDirection());
-//        System.out.println(getDirection());
-        double direction = getDirection() % 360;
-        //  System.out.println("rat direction");
-        //  System.out.println(direction);
-        if (direction >= 0 && direction < 90) {
-            setAutoCycleRow(2);
-            //System.out.println(getAutoCycleRow());
-        } else if (direction >= 90 && direction < 180) {
-            setAutoCycleRow(1);
-            // System.out.println(getAutoCycleRow());
-
-        } else if (direction >= 180 && direction < 270) {
-            setAutoCycleRow(2);
-            // System.out.println(getAutoCycleRow());
-
-        } else if (direction >= 269 && direction < 360) {
-            setAutoCycleRow(3);
-            //  System.out.println(getAutoCycleRow());
-
-        }
-    }
-
     @Override
     public int getHealth() {
         return health;
