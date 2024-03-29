@@ -2,6 +2,7 @@ package com.github.hanyaeger.isaaconthestreets.entities;
 
 
 import com.github.hanyaeger.api.Coordinate2D;
+import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.entities.Collided;
 import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.Direction;
@@ -15,7 +16,7 @@ import java.util.List;
 public class Steen extends DynamicSpriteEntity implements Collided,Collider, SceneBorderCrossingWatcher {
 
     public Steen(final Coordinate2D initialLocation, final Direction direction) {
-        super("sprites/hanny.png", initialLocation, 2, 6);
+        super("sprites/boulder.png", initialLocation,new Size(20,20), 1, 1);
         setMotion(5, direction);
 
     }
