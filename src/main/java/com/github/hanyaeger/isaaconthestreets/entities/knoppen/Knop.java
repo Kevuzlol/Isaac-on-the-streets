@@ -12,7 +12,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 
-public  class Knop extends TextEntity implements MouseButtonPressedListener, MouseEnterListener, MouseExitListener {
+public abstract class Knop extends TextEntity implements MouseButtonPressedListener, MouseEnterListener, MouseExitListener {
 
     public final IsaacOnTheStreets isaacOnTheStreets;
 
