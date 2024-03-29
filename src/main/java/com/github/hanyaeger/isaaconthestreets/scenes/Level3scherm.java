@@ -51,10 +51,6 @@ public class Level3scherm extends Levelscherm implements TileMapContainer {
 
 
 
-
-
-
-
         Kakkerlak kakkerlak = new Kakkerlak("sprites/kakkerlak.png", new Coordinate2D(400, 600), isaacOnTheStreets, isaac);
         addEntity(kakkerlak);
 

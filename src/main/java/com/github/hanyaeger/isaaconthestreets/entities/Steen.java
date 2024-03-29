@@ -16,13 +16,8 @@ public class Steen extends DynamicSpriteEntity implements Collided,Collider, Sce
 
     public Steen(final Coordinate2D initialLocation, final Direction direction) {
         super("sprites/hanny.png", initialLocation, 2, 6);
-//        setAutoCycle(100);
         setMotion(5, direction);
-//        if (direction.equals(Direction.RIGHT)) {
-//            setAutoCycleRow(1);
-//        } else {
-//            setAutoCycleRow(0);
-//        }
+
     }
 
     @Override

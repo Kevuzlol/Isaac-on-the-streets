@@ -156,4 +156,6 @@ public class Isaac extends DynamicSpriteEntity implements SceneBorderTouchingWat
                 break;
         }
     }
+
+
 }
