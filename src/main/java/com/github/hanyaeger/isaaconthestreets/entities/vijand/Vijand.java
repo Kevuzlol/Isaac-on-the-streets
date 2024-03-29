@@ -41,7 +41,7 @@ public abstract class Vijand extends DynamicSpriteEntity implements Collider, Co
         aantalVijanden++;
     }
 
-    // in plaats van methode doedamage gelijk in de oncollision
+
     @Override
     public void onCollision(List<Collider> list) {
         var obstakelCollision = false;
