@@ -6,6 +6,7 @@ import com.github.hanyaeger.api.entities.impl.TextEntity;
 import com.github.hanyaeger.api.scenes.StaticScene;
 import com.github.hanyaeger.isaaconthestreets.IsaacOnTheStreets;
 import com.github.hanyaeger.isaaconthestreets.entities.knoppen.PlayAgainKnop;
+import com.github.hanyaeger.isaaconthestreets.entities.knoppen.StopKnop;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -40,6 +41,10 @@ public class Scorescherm extends StaticScene {
         PlayAgainKnop PlayAgainKnop = new PlayAgainKnop(new Coordinate2D(getWidth() / 2, getHeight() / 3 + 500), isaacOnTheStreets);
         PlayAgainKnop.setAnchorPoint(AnchorPoint.TOP_CENTER);
         addEntity(PlayAgainKnop);
+
+        StopKnop stopKnop = new StopKnop(new Coordinate2D(getWidth() / 2 + 390, getHeight() / 3 + 400), isaacOnTheStreets);
+        stopKnop.setAnchorPoint(AnchorPoint.TOP_CENTER);
+        addEntity(stopKnop);
     }
 }
 

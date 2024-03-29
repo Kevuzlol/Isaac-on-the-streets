@@ -6,6 +6,7 @@ import com.github.hanyaeger.api.entities.impl.TextEntity;
 import com.github.hanyaeger.api.scenes.StaticScene;
 import com.github.hanyaeger.isaaconthestreets.IsaacOnTheStreets;
 import com.github.hanyaeger.isaaconthestreets.entities.knoppen.StartKnop;
+import com.github.hanyaeger.isaaconthestreets.entities.knoppen.StopKnop;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -39,5 +40,9 @@ public class Startscherm extends StaticScene {
         var startSpelText = new StartKnop(new Coordinate2D(getWidth() / 2, getHeight() / 2), isaacOnTheStreets);
         startSpelText.setAnchorPoint(AnchorPoint.TOP_CENTER);
         addEntity(startSpelText);
+
+        StopKnop stopKnop = new StopKnop(new Coordinate2D(getWidth() / 2 + 390, getHeight() / 3 + 400), isaacOnTheStreets);
+        stopKnop.setAnchorPoint(AnchorPoint.TOP_CENTER);
+        addEntity(stopKnop);
     }
 }

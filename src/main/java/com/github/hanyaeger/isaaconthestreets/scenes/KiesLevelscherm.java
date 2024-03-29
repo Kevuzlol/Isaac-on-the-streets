@@ -5,12 +5,12 @@ import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.impl.TextEntity;
 import com.github.hanyaeger.api.scenes.StaticScene;
 import com.github.hanyaeger.isaaconthestreets.IsaacOnTheStreets;
-import com.github.hanyaeger.isaaconthestreets.entities.knoppen.Level1Knop;
-import com.github.hanyaeger.isaaconthestreets.entities.knoppen.Level2Knop;
-import com.github.hanyaeger.isaaconthestreets.entities.knoppen.Level3Knop;
+import com.github.hanyaeger.isaaconthestreets.entities.knoppen.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+
+import static com.github.hanyaeger.isaaconthestreets.entities.knoppen.StopKnop.*;
 
 public class KiesLevelscherm extends StaticScene {
     private IsaacOnTheStreets isaacOnTheStreets;
@@ -50,7 +50,9 @@ public class KiesLevelscherm extends StaticScene {
         Level3Knop.setAnchorPoint(AnchorPoint.TOP_CENTER);
         addEntity(Level3Knop);
 
-
+        StopKnop stopKnop = new StopKnop(new Coordinate2D(getWidth() / 2 + 390, getHeight() / 3 + 400), isaacOnTheStreets);
+        stopKnop.setAnchorPoint(AnchorPoint.TOP_CENTER);
+        addEntity(stopKnop);
 
     }
 }

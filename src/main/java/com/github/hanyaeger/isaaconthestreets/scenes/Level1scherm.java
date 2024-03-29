@@ -1,9 +1,11 @@
 package com.github.hanyaeger.isaaconthestreets.scenes;
 
+import com.github.hanyaeger.api.AnchorPoint;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.scenes.TileMapContainer;
 import com.github.hanyaeger.isaaconthestreets.IsaacOnTheStreets;
 import com.github.hanyaeger.isaaconthestreets.entities.Isaac;
+import com.github.hanyaeger.isaaconthestreets.entities.knoppen.StopKnop;
 import com.github.hanyaeger.isaaconthestreets.entities.mappen.Level1Map;
 import com.github.hanyaeger.isaaconthestreets.entities.vijand.Ratten;
 import com.github.hanyaeger.isaaconthestreets.entities.text.HealthText;
@@ -37,6 +39,10 @@ public class Level1scherm extends Levelscherm implements TileMapContainer {
 
         Stopbord stopbord = new Stopbord("sprites/stopsign.png", new Coordinate2D(150, 200), isaacOnTheStreets);
         addEntity(stopbord);
+
+        StopKnop stopKnop = new StopKnop(new Coordinate2D(getWidth() / 2 + 390, getHeight() / 3 + 400), isaacOnTheStreets);
+        stopKnop.setAnchorPoint(AnchorPoint.TOP_CENTER);
+        addEntity(stopKnop);
 
     }
 

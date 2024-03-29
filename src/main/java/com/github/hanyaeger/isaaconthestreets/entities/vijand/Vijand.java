@@ -6,7 +6,7 @@ import com.github.hanyaeger.api.entities.Collided;
 import com.github.hanyaeger.api.entities.Collider;
 
 import com.github.hanyaeger.api.entities.SceneBorderTouchingWatcher;
-import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
+import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;import java.util.Random;
 import com.github.hanyaeger.api.scenes.SceneBorder;
 import com.github.hanyaeger.isaaconthestreets.IsaacOnTheStreets;
 import com.github.hanyaeger.isaaconthestreets.entities.Isaac;
@@ -15,7 +15,7 @@ import com.github.hanyaeger.isaaconthestreets.entities.mappen.obstakels.Obstakel
 import com.github.hanyaeger.api.entities.Direction;
 
 import java.util.List;
-import java.util.Random;
+
 
 public abstract class Vijand extends DynamicSpriteEntity implements Collider, Collided, SceneBorderTouchingWatcher {
 
