@@ -39,6 +39,7 @@ public class Level2scherm extends Levelscherm implements TileMapContainer {
 
 
 
+
         //addEntity(rat1);
        // addEntity(rat2);
         addEntity(rat3);
