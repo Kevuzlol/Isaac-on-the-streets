@@ -8,6 +8,7 @@ import com.github.hanyaeger.api.scenes.SceneBorder;
 import com.github.hanyaeger.isaaconthestreets.IsaacOnTheStreets;
 import com.github.hanyaeger.isaaconthestreets.entities.Isaac;
 import com.github.hanyaeger.isaaconthestreets.entities.Steen;
+import com.github.hanyaeger.isaaconthestreets.entities.mappen.obstakels.Obstakels;
 
 import java.util.List;
 
@@ -26,9 +27,29 @@ public class Vlieg extends Vijand {
         this.isaacOnTheStreets = isaacOnTheStreets;
 
     }
+    @Override
+    public void onCollision(List<Collider> list) {
+        var obstakelCollision = false;
+        var steenCollision = false;
+        for (Collider collider : list) {
+            if (collider instanceof Steen) {
+                steenCollision = true;
+            }
+        }
+        if(steenCollision){
+            if(Vijand.getPowerUpisactief()) {
+                health--;
+            }
 
-//    @Override
-//    public int getHealth() {
-//        return health;
-//    }
+        }
+        if (health <= 0) {
+            remove();
+            Vijand.setAantalVijanden(Vijand.getAantalVijanden() - 1);
+            System.out.println("Number of enemies: " + Vijand.getAantalVijanden());
+        }
+        if (Vijand.getAantalVijanden() <= 0) {
+            this.isaacOnTheStreets.setActiveScene(2);
+        }
+    }
+
 }
