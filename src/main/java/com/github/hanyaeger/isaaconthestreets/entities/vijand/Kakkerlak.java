@@ -26,15 +26,15 @@ public class Kakkerlak extends Vijand {
         setAutoCycle(70, 0);
         setSnelheid(7);
         setDamage(1);
-        setMotion(getSnelheid(), ontwijkIsaac());
+        setMotion(getSnelheid(), Direction.RIGHT);
         this.isaacOnTheStreets = isaacOnTheStreets;
         this.isaac = isaac;
 
     }
 
 
-    public double ontwijkIsaac(){
-          setDirection(angleTo(isaac) + PI);
+    public void ontwijkIsaac(){
+          setDirection(angleTo(isaac) + PI); // pi want radius
     }
 
 
