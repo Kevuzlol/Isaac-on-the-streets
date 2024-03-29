@@ -10,7 +10,6 @@ import com.github.hanyaeger.isaaconthestreets.entities.mappen.Level1Map;
 import com.github.hanyaeger.isaaconthestreets.entities.text.SchildText;
 import com.github.hanyaeger.isaaconthestreets.entities.vijand.Ratten;
 import com.github.hanyaeger.isaaconthestreets.entities.text.HealthText;
-import com.github.hanyaeger.isaaconthestreets.entities.vijand.Stopbord;
 import com.github.hanyaeger.isaaconthestreets.entities.vijand.Vlieg;
 
 
@@ -33,12 +32,13 @@ public class Level1scherm extends Levelscherm implements TileMapContainer {
         var schildText = new SchildText(new Coordinate2D(200, 50));
         addEntity(schildText);
 
-        addEntity(new Isaac(new Coordinate2D(700, 40), healthText, schildText, isaacOnTheStreets, this));
+        var isaac = new Isaac(new Coordinate2D(700, 40), healthText, schildText, isaacOnTheStreets, this);
+        addEntity(isaac);
 
-        Ratten ratten = new Ratten("sprites/rat_1.png", new Coordinate2D(200, 200), isaacOnTheStreets);
+        Ratten ratten = new Ratten("sprites/rat_1.png", new Coordinate2D(200, 200), isaacOnTheStreets, isaac);
         addEntity(ratten);
 
-        Vlieg vlieg = new Vlieg("sprites/vlieg.png", new Coordinate2D(200, 100), isaacOnTheStreets);
+        Vlieg vlieg = new Vlieg("sprites/vlieg.png", new Coordinate2D(200, 100), isaacOnTheStreets, isaac);
         addEntity(vlieg);
 
 
@@ -51,4 +51,5 @@ public class Level1scherm extends Levelscherm implements TileMapContainer {
     public void setupTileMaps() {
         addTileMap(new Level1Map());
     }
+
 }

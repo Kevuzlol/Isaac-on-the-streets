@@ -9,6 +9,7 @@ import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 
 import com.github.hanyaeger.api.scenes.SceneBorder;
 import com.github.hanyaeger.isaaconthestreets.IsaacOnTheStreets;
+import com.github.hanyaeger.isaaconthestreets.entities.Isaac;
 import com.github.hanyaeger.isaaconthestreets.entities.Steen;
 import com.github.hanyaeger.isaaconthestreets.entities.mappen.obstakels.Obstakels;
 
@@ -17,10 +18,11 @@ import java.util.List;
 
 public abstract class Vijand extends DynamicSpriteEntity implements Collider, Collided, SceneBorderTouchingWatcher {
 
-    // stati variable aanmaken die bijhoud hoeveel enemys er zijn
+    // static variable aanmaken die bijhoudt hoeveel enemys er zijn
 
     private static int aantalVijanden = 0;
     protected IsaacOnTheStreets isaacOnTheStreets;
+    protected Isaac isaac;
     private int health = 6;
     private int standardDamage = 1;
     private int ontvangenPowerupDamage = 2;
@@ -38,7 +40,7 @@ public abstract class Vijand extends DynamicSpriteEntity implements Collider, Co
         aantalVijanden++;
     }
 
-    // inplaats van methode doedamage gelijk in de oncollision
+    // in plaats van methode doedamage gelijk in de oncollision
     @Override
     public void onCollision(List<Collider> list) {
         var obstakelCollision = false;
@@ -69,6 +71,7 @@ public abstract class Vijand extends DynamicSpriteEntity implements Collider, Co
                 System.out.println("Number of enemies: " + Vijand.getAantalVijanden());
             }
         if (Vijand.getAantalVijanden() <= 0) {
+            isaacOnTheStreets.addScore(isaac.getIsaacHealth());
             this.isaacOnTheStreets.setActiveScene(2);
         }
     }

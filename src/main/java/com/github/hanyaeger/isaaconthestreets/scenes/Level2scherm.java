@@ -30,7 +30,8 @@ public class Level2scherm extends Levelscherm implements TileMapContainer {
         var schildText = new SchildText(new Coordinate2D(200, 50));
         addEntity(schildText);
 
-        addEntity(new Isaac(new Coordinate2D(700, 40), healthText, schildText, isaacOnTheStreets, this));
+        var isaac = new Isaac(new Coordinate2D(700, 40), healthText, schildText, isaacOnTheStreets, this);
+        addEntity(isaac);
 
        // Ratten rat1 = new Ratten("sprites/rat_1.png", new Coordinate2D(450,400),isaacOnTheStreets);
        // Ratten rat2 = new Ratten("sprites/rat_1.png", new Coordinate2D(400,500),isaacOnTheStreets);
