@@ -23,6 +23,7 @@ public class Level3scherm extends Levelscherm implements TileMapContainer {
     @Override
     public void setupScene() {
         setBackgroundImage("backgrounds/level3background.jpeg");
+        setBackgroundAudio("audio/young-wild-free.mp3");
     }
 
     @Override
@@ -39,10 +40,10 @@ public class Level3scherm extends Levelscherm implements TileMapContainer {
         stopKnop.setAnchorPoint(AnchorPoint.TOP_CENTER);
         addEntity(stopKnop);
 
-        Stopbord stopbord1 = new Stopbord("sprites/stopsign.png", new Coordinate2D(200, 500), isaacOnTheStreets);
+        Stopbord stopbord1 = new Stopbord("sprites/stopsign.png", new Coordinate2D(500, 600), isaacOnTheStreets);
         addEntity(stopbord1);
 
-        Stopbord stopbord2 = new Stopbord("sprites/stopsign.png", new Coordinate2D(100, 300), isaacOnTheStreets);
+        Stopbord stopbord2 = new Stopbord("sprites/stopsign.png", new Coordinate2D(170, 300), isaacOnTheStreets);
         addEntity(stopbord2);
 
         Vlieg vlieg = new Vlieg("sprites/vlieg.png", new Coordinate2D(200, 100), isaacOnTheStreets);
