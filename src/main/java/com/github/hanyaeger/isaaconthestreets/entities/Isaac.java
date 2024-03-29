@@ -7,10 +7,12 @@ import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.Direction;
 import com.github.hanyaeger.api.entities.SceneBorderTouchingWatcher;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
+import com.github.hanyaeger.api.media.SoundClip;
 import com.github.hanyaeger.api.scenes.SceneBorder;
 import com.github.hanyaeger.api.userinput.KeyListener;
 import com.github.hanyaeger.isaaconthestreets.IsaacOnTheStreets;
 import com.github.hanyaeger.isaaconthestreets.entities.mappen.obstakels.Obstakels;
+import com.github.hanyaeger.isaaconthestreets.entities.powerups.CrystalMeth;
 import com.github.hanyaeger.isaaconthestreets.entities.powerups.Hartje;
 import com.github.hanyaeger.isaaconthestreets.entities.powerups.Heroine;
 import com.github.hanyaeger.isaaconthestreets.entities.powerups.Speed;
@@ -97,6 +99,9 @@ public class Isaac extends DynamicSpriteEntity implements SceneBorderTouchingWat
             } else if (collider instanceof Heroine) {
                 schild = true;
                 schildText.setText("Schild");
+            } else if (collider instanceof CrystalMeth){
+                var popSound = new SoundClip("audio/Moffel.mp3");
+                popSound.play();
             }
         }
 

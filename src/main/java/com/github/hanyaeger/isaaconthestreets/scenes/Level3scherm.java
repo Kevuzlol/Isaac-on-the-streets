@@ -23,7 +23,7 @@ public class Level3scherm extends Levelscherm implements TileMapContainer {
     @Override
     public void setupScene() {
         setBackgroundImage("backgrounds/level3background.jpeg");
-        setBackgroundAudio("audio/young-wild-free.mp3");
+        setBackgroundAudio("audio/young_wild_free.mp3");
     }
 
     @Override
